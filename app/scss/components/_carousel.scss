@@ -1,0 +1,82 @@
+.carousel {
+
+  &__title {
+    margin-bottom: clamp(1.875rem, 1.514rem + 1.6vw, 3.438rem); // 30 - 55
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    @include mxw($md) {
+      gap: 10px;
+    }
+
+    @include mxw($sm) {
+      gap: 0;
+      justify-content: center;
+    }
+  }
+
+  &__arrow {
+    cursor: pointer;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 5px;
+    padding: 11px;
+    background-color: $c-accent;
+    position: relative;
+    transition: opacity .3s linear;
+
+    &.swiper-button-disabled {
+      opacity: .3;
+    }
+
+    &::after {
+      @include pseudo();
+      @include bg-image();
+      width: 1.3rem;
+      height: 1.3rem;
+      background-image: url('../images/icons/chevron-right.svg');
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+    }
+
+    &--prev {
+      transform: scale(-1);
+    }
+  }
+
+  &__swiper {
+    max-width: 80rem;
+
+    @include mxw($lg) {
+      max-width: 50rem;
+    }
+    @include mxw($md) {
+      max-width: 34rem;
+    }
+    @include mxw($sm) {
+      max-width: 100%;
+    }
+  }
+
+  &__list {
+    @include mxw($sm) {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    @include mxw($xs) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+}
+
