@@ -1,0 +1,15 @@
+.breadcrumbs {
+  padding-top: clamp(3.875rem, 2.793rem + 4.81vw, 8.563rem); //62 - 137
+  margin-bottom: clamp(2rem, 1.668rem + 1.47vw, 3.438rem); //32 - 55
+
+  &__inner {
+    display: flex;
+    gap: 12px;
+    font-size: clamp(0.75rem, 0.721rem + 0.13vw, 0.875rem); //12 - 14
+    text-transform: uppercase;
+  }
+
+  &__link--active {
+    color: $c-accent
+  }
+}

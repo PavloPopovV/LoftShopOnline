@@ -12,6 +12,9 @@
 @import './components/logo' ;
 @import './components/footer-nav' ;
 @import './components/contacts' ;
+@import './components/promotion-form' ;
+@import './components/carousel' ;
+@import './components/product-card' ;
 
 //layouts
 @import './layouts/header' ;
@@ -19,3 +22,5 @@
 
 //sections
 @import './sections/hero' ;
+@import './sections/promotion' ;
+@import './sections/breadcrumbs' ;
