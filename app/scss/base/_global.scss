@@ -23,10 +23,10 @@ body {
 }
 
 .container {
-    max-width: clamp(21.875rem, 2.49rem + 86.15vw, 91.875rem);
+    max-width: clamp(21.875rem, 2.49rem + 86.15vw, 91.875rem);// 350-1470
     width: 100%;
     margin: 0 auto;
-    padding: clamp(0.313rem, 0.139rem + 0.77vw, 0.938rem);
+    padding: 0 clamp(0.313rem, 0.139rem + 0.77vw, 0.938rem); // 5-15
 }
 
 .sr-only {
