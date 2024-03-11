@@ -1,0 +1,16 @@
+.footer-nav {
+
+  &__item:not(:last-child) {
+    margin-bottom: 0.6rem;
+  }
+
+  &__link {
+    display: block;
+    transition: color .3s linear;
+
+    &:hover {
+      color: $c-accent;
+    }
+  }
+}
+

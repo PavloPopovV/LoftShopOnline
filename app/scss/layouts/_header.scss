@@ -106,15 +106,15 @@
         }
 
         &--instagram::after {
-            background-image: url('../../images/icons/inst.svg');
+            background-image: url('../images/icons/inst.svg');
         }
 
         &--phone::after {
-            background-image: url('../../images/icons/phone.svg');
+            background-image: url('../images/icons/phone.svg');
         }
 
         &--basket::after {
-            background-image: url('../../images/icons/basket.svg');
+            background-image: url('../images/icons/basket.svg');
         }
 
         &:hover{

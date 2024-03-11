@@ -1,0 +1,43 @@
+.contacts {
+
+
+  &__item:not(:last-child) {
+    margin-bottom: 0.75rem;
+  }
+
+  &__link {
+    padding-left: 30px;
+    position: relative;
+    transition: color .3s linear;
+    &::after {
+      @include pseudo();
+      width: 1rem;
+      height: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      @include bg-image();
+      filter: invert(0%) sepia(24%) saturate(3465%) hue-rotate(309deg) brightness(97%) contrast(79%);
+    }
+
+    &--inst::after {
+      background-image: url('../images/icons/inst.svg');
+    }
+
+    &--email::after {
+      background-image: url('../images/icons/email.svg');
+    }
+
+    &--phone::after {
+      background-image: url('../images/icons/phone.svg');
+    }
+
+    &--location::after {
+      background-image: url('../images/icons/location.svg');
+    }
+
+    &:hover {
+      color: $c-accent;
+    }
+  }
+}
