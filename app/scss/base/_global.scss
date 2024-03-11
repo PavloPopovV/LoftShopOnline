@@ -23,21 +23,56 @@ body {
 }
 
 .container {
-    max-width: clamp(21.875rem, 2.49rem + 86.15vw, 91.875rem);// 350-1470
+    max-width: clamp(21.875rem, 2.49rem + 86.15vw, 91.875rem); // 350-1470
     width: 100%;
     margin: 0 auto;
     padding: 0 clamp(0.313rem, 0.139rem + 0.77vw, 0.938rem); // 5-15
 }
 
+section {
+    margin-bottom: clamp(3.125rem, 2.404rem + 3.21vw, 6.25rem); // 50 - 100
+}
+
 .sr-only {
     position: absolute;
+    left: -9999px;
+    top: auto;
     width: 1px;
     height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
     overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px)
+}
+
+
+.title {
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-size: clamp(1.125rem, 0.894rem + 1.03vw, 2.125rem); // 18-34
+    color: $c-black;
+    font-weight: 400;
+}
+
+.btn {
+    text-align: center;
+    padding: 13px;
+    text-transform: uppercase;
+    background-color: $c-accent;
+    color: $c-white;
+
+    @include mxw($xs) {
+        font-size: 14px;
+    }
+}
+
+.input {
+    padding: clamp(0.75rem, 0.635rem + 0.51vw, 1.25rem) 10px; // 12 - 20
+    background-color: transparent;
+    border: 1px solid $c-silver;
+    font-weight: 500;
+
+    &::placeholder {
+        text-align: center;
+        color: $c-black;
+        font-weight: 400;
+    }
 }

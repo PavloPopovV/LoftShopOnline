@@ -1,5 +1,17 @@
 .footer-nav {
 
+  &--catalog {
+    @include mxw($sm) {
+      display: none;
+    }
+  }
+
+  &--shop {
+    @include mxw($md) {
+      display: none;
+    }
+  }
+
   &__item:not(:last-child) {
     margin-bottom: 0.6rem;
   }
@@ -13,4 +25,3 @@
     }
   }
 }
-
