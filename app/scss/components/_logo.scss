@@ -3,7 +3,7 @@
     display: block;
     object-fit: contain;
     height: 2rem;
-    width: clamp(10.75rem, 8.385rem + 10.51vw, 21rem); // 172-336
+    width: clamp(12.5rem, 10.538rem + 8.72vw, 21rem); // 200-336
     transition: filter .3s linear;
     &:hover {
       filter: invert(80%) sepia(38%) saturate(244%) hue-rotate(343deg) brightness(95%) contrast(84%);
