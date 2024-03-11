@@ -1,0 +1,50 @@
+.hero{
+    width: 100%;
+    background-color: $c-silver;
+    color: $c-white;
+
+    &__inner{
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+
+    &__content{
+        transform: translateY(-50%);
+        text-align: center;
+    }
+
+    &__title{
+        font-weight: 400;
+        font-size: clamp(1.25rem, 1.135rem + 0.51vw, 1.75rem);//28px-20px
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+
+    &__text{
+        position: relative;
+        font-size: clamp(0.75rem, 0.635rem + 0.51vw, 1.25rem);
+        padding-bottom: 16px;
+        margin-bottom: clamp(1.25rem, 1.192rem + 0.26vw, 1.5rem);
+
+        &::after{
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 1px;
+            background-color: $c-white;
+            bottom: 0;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__btn{
+        text-transform: uppercase;
+        font-size: clamp(1rem, 0.971rem + 0.13vw, 1.125rem);
+
+        &:hover{
+            color: $c-accent;
+            transition: color 0.3s ease-in-out;
+        }
+    }
+}

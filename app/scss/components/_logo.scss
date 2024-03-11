@@ -14,5 +14,11 @@
         filter: invert(85%) sepia(34%) saturate(407%) hue-rotate(325deg) brightness(93%) contrast(87%);
       }
     }
+
+    &--white{
+      &:hover {
+        filter: invert(20%) sepia(37%) saturate(244%) hue-rotate(343deg) brightness(94%) contrast(87%);
+      }
+    }
   }
 }
