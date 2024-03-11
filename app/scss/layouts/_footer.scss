@@ -1,4 +1,6 @@
 .footer {
+  border-top:1px solid $c-silver;
+  padding-top: 2rem;
 
   &__inner {
     font-weight: 300;
@@ -6,14 +8,32 @@
     justify-content: space-between;
     gap: 10px;
     margin-bottom: clamp(0.75rem, 0.433rem + 1.41vw, 2.125rem); //12-34
+
+    @include mxw($xs) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+
+  &__content {
+    @include mxw($xs) {
+      order: 3;
+      text-align: center;
+    }
   }
 
   &__logo {
     display: block;
-    padding-bottom: 2rem;
-    margin-bottom: 4.3rem;
+    padding-bottom: clamp(0rem, -0.462rem + 2.05vw, 2rem); //0-32
+    margin-bottom: clamp(1.875rem, 1.298rem + 2.56vw, 4.375rem); //30 - 70
     position: relative;
-    
+
+    @include mxw($xs) {
+      display: none;
+    }
+
     &::after {
       @include pseudo();
       bottom: 0;
@@ -21,10 +41,23 @@
       height: 2px;
       background-color: $c-silver;
       transition: background-color .3s linear;
+
+      @include mxw($xs) {
+        display: none;
+      }
     }
 
     &:hover::after {
       background-color: $c-accent;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include mxw($xs) {
+        display: block;
+        order: 1;
+      }
     }
   }
 
@@ -36,23 +69,32 @@
   &__develop {
     display: flex;
     align-items: center;
-    span{
+
+    span {
       margin-right: 6px;
     }
   }
-
-
 
   &__title {
     display: block;
     font-weight: 400;
     font-size: 1.25rem;
     margin-bottom: 1rem;
-
     transition: color .3s linear;
 
     &:hover {
       color: $c-accent;
+    }
+
+    @include mxw($xs) {
+      display: none;
+    }
+  }
+
+  &__contacts {
+    @include mxw($xs) {
+      order: 2;
+      text-align: center;
     }
   }
 
