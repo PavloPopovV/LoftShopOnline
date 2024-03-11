@@ -1,0 +1,40 @@
+@mixin pseudo {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+@mixin bg-image {
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin line-clamp($lines: 1) {
+    @if $lines <=1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    @else {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
+}
+
+$xs: 560;
+$sm: 768;
+$md: 992;
+$lg: 1200;
+$mlg: 1440;
+$vlg: 1600;
+
+@mixin mxw($width) {
+    @media (max-width: #{$width}px) {
+        @content;
+    }
+}
