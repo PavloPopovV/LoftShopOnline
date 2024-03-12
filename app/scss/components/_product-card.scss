@@ -1,13 +1,14 @@
 .product-card {
   position: relative;
-  max-width: clamp(10.313rem, 4.25rem + 10.1vw, 16.375rem); // 165 - 262
+  max-width: clamp(10.313rem, 8.654rem + 7.37vw, 17.5rem); // 165 - 280
 
   &.sale .product-card__banners::after {
     display: block;
     content: "SALE";
-    
+
   }
-  &.new .product-card__banners::before{
+
+  &.new .product-card__banners::before {
     display: block;
     content: "NEW";
   }
@@ -18,12 +19,17 @@
 
   &__banners {
     position: absolute;
-    display: flex;flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
     width: 4.6rem;
     height: 3.5rem;
     right: 0;
     top: 10px;
+
+    @include mxw($xs) {
+      height: 3rem;
+    }
 
     &::after,
     &::before {

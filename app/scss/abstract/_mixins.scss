@@ -1,3 +1,16 @@
+$xs: 560;
+$sm: 768;
+$md: 960;
+$lg: 1200;
+$mlg: 1440;
+$vlg: 1600;
+
+@mixin mxw($width) {
+    @media (max-width: #{$width}px) {
+        @content;
+    }
+}
+
 @mixin pseudo {
     content: '';
     display: block;
@@ -26,15 +39,3 @@
     }
 }
 
-$xs: 560;
-$sm: 768;
-$md: 960;
-$lg: 1200;
-$mlg: 1440;
-$vlg: 1600;
-
-@mixin mxw($width) {
-    @media (max-width: #{$width}px) {
-        @content;
-    }
-}

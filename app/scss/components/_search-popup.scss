@@ -1,0 +1,93 @@
+.search-popup {
+  position: relative;
+  max-width: clamp(21.563rem, 19.327rem + 9.94vw, 31.25rem); // 345 - 500
+  width: 100%;
+
+  opacity: 0;
+  width: 0;
+  transform: scale(0);
+  z-index: 1;
+  transition: all .3s ease-in-out;
+
+  &.show {
+    opacity: 1;
+    width: 100%;
+    transform: scale(1);
+  }
+
+  @include mxw($xs) {
+    max-width: 100%;
+  }
+
+  &__list {
+    z-index: 1;
+    background-color: $c-white;
+    position: absolute;
+    top: 0.8rem;
+    padding: 0.6rem 1.2rem;
+    width: 100%;
+    max-height: 15.6rem; //250px
+    overflow-y: scroll;
+    border: 1px solid $c-silver;
+
+    @include mxw($xs) {
+      padding: 0.6rem;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 10px 10px $c-white;
+      border-radius: 3px;
+      border: solid 3px transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      box-shadow: inset 0 0 10px 10px $c-accent;
+      border-radius: 30px;
+      border: solid 3px transparent;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+
+      @include mxw($xs) {
+        margin-bottom: 0.8rem;
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 0.846rem + 0.13vw, 1rem); //14 - 16
+    padding-bottom: 1rem;
+    @include line-clamp(1);
+
+    @include mxw($xs) {
+      padding-bottom: 0.8rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 5rem;
+      height: 1px;
+      background-color: $c-silver;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    i {
+      color: $c-accent;
+      font-style: normal;
+      font-weight: 500;
+    }
+  }
+}

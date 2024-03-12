@@ -20,7 +20,7 @@ body {
     height: 100%;
     overflow-x: hidden;
     display: grid;
-    grid-template-rows: min-content 1fr min-content;
+    grid-template-rows: 1fr min-content;
 }
 
 .container {
