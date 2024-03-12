@@ -2,39 +2,42 @@
   position: relative;
   max-width: clamp(10.313rem, 4.25rem + 10.1vw, 16.375rem); // 165 - 262
 
-  &.sale,
-  &.new {
-    &::after,
-    &::before {
-      content: '';
-      position: absolute;
-      width: 4.6rem;
-      line-height: 1;
-      padding: 4px 0;
-      font-weight: 500;
-      text-align: center;
-      right: 0;
-      top: 10px;
-      background-color: $c-accent;
-      color: $c-white;
-
-      @include mxw($sm) {
-        top: 4px;
-      }
-    }
+  &.sale .product-card__banners::after {
+    display: block;
+    content: "SALE";
+    
   }
-
-  &.sale::after {
-    content: 'SALE';
-  }
-
-  &.new::before {
-    content: 'NEW';
-    top: 40px;
+  &.new .product-card__banners::before{
+    display: block;
+    content: "NEW";
   }
 
   &__link {
     display: block;
+  }
+
+  &__banners {
+    position: absolute;
+    display: flex;flex-direction: column;
+    justify-content: space-between;
+    width: 4.6rem;
+    height: 3.5rem;
+    right: 0;
+    top: 10px;
+
+    &::after,
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      line-height: 1;
+      padding: 4px 0;
+      font-weight: 500;
+      text-align: center;
+      background-color: $c-accent;
+      color: $c-white;
+      display: none;
+    }
   }
 
   &__img {
