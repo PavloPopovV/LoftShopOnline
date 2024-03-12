@@ -135,10 +135,17 @@
         border: 1px solid $c-silver;
         cursor: pointer;
 
+        &:hover{
+            background-color: $c-accent;
+            color: $c-white;
+            transition: all 0.3s linear;
+            border:1px solid $c-accent;
+        }
+
         &.active{
             color: $c-white;
             background-color: $c-darkAccent;
-            border: transparent;
+            border: 1px solid $c-darkAccent;
         }
     }
 
@@ -162,6 +169,7 @@
         background-color: $c-accent;
         color: $c-white;
         font-size: clamp(0.875rem, 0.846rem + 0.13vw, 1rem); //14-16
+        cursor: pointer;
 
         &--basket {
             position: relative;
@@ -177,6 +185,15 @@
                 transform: translateY(-50%);
                 background-image: url('/./images/icons/basket.svg');
             }
+        }
+
+        &:hover{
+            box-shadow: 0px 5px 4px 0px rgba(37,37,37,0.27);
+            transition: box-shadow 0.3s linear;
+        }
+
+        &.active{
+            background-color: $c-darkAccent;
         }
     }
 
@@ -194,6 +211,7 @@
         width: 100%;
         z-index: 15;
         border-bottom: 1px solid $c-silver;
+        cursor: pointer;
 
         &::after {
             @include pseudo();
