@@ -16,14 +16,14 @@ function changeHeaderTextColorWhite(className) {
   [...productPageHeader].forEach((btn) => btn.classList.add("inner-header"));
 }
 
-// function headerScrool() {
-//   const scrollTop = wrapper.scrollTop;
-//   header.classList.toggle("sticky", scrollTop >= 50);
-//   header.classList.toggle("animation", scrollTop >= 200);
-//   headerCount.classList.toggle("color", scrollTop >= 200);
-// }
+function headerScroll() {
+  const scrollTop = wrapper.scrollTop;
+  header.classList.toggle("sticky", scrollTop >= 50);
+  header.classList.toggle("animation", scrollTop >= 200);
+  headerCount.classList.toggle("color", scrollTop >= 200);
+}
 
-function checkClass() {
+function checkClassForHeaderOnLoad() {
   if (document.querySelector(".inner-page") !== null) {
     changeHeaderTextColorWhite(".header__btn");
     changeHeaderTextColorWhite(".header__logo");
@@ -43,7 +43,6 @@ function showOrHideSwiper() {
       item.classList.remove("swiper");
       item.firstElementChild.classList.remove("swiper-wrapper");
     });
-
     arrows.forEach((arrow) => (arrow.style.display = "none"));
     return;
   }
@@ -124,9 +123,10 @@ document.addEventListener("click", (e) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   showOrHideSwiper();
-  checkClass();
+  checkClassForHeaderOnLoad();
+  changeFiltersOnLoad();
 });
 
-// wrapper.addEventListener("scroll", function () {
-//   headerScrool();
-// });
+wrapper.addEventListener("scroll", function () {
+  headerScroll();
+});
