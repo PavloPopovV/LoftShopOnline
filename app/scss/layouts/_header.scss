@@ -1,20 +1,100 @@
 .header {
-    position: absolute;
-    top: 1.8rem;
+    position: fixed;
+    z-index: 10;
+    top: 0;
     right: 0;
     left: 0;
     width: 100%;
-    height: 2.5rem;
+    padding-top: clamp(0.938rem, 0.505rem + 1.92vw, 2.813rem);//45-15
+    color: $c-white;
+
+
+    &.sticky {
+        opacity: 0;
+        transform: translateY(-300px);
+        transition: all .3s linear;
+    }
+    
+    &.animation {
+        opacity: 1;
+        transform: translateY(0);
+        background-color: $c-black;
+        transition: all .3s linear;
+        padding: 20px 0;
+    }
+    
 
     &__navigation {
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include mxw($md) {
+            justify-content: space-between;
+        }
+    }
+
+    &__burger {
+        display: none;
+        position: relative;
+        width: clamp(1.25rem, 1.106rem + 0.64vw, 1.875rem);//30-20
+        height: clamp(0.938rem, 0.721rem + 0.96vw, 1.875rem);//30-15;
+        background-color: transparent;
+        margin-right: 10px;
+        cursor: pointer;
+
+        &::after,
+        &::before,
+        span {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: $c-white;
+            left: 0;
+        }
+
+        &::after{
+            top: 0;
+        }
+
+        &::before{
+            bottom: 0;
+        }
+
+        span{
+            transform: translateY(-50%);
+        }
+
+        &.inner-header{
+            &::after,
+            &::before,
+            span {
+                background-color: $c-accent;
+            }
+        }
+
+        @include mxw($md) {
+            display: block;
+        }
+    }
+
+    &__logo{
+        &.inner-header{
+            filter: invert(4%) sepia(4%) saturate(4649%) hue-rotate(309deg) brightness(92%) contrast(89%);
+            @include mxw($md) {
+                filter: invert(92%) sepia(1%) saturate(2957%) hue-rotate(21deg) brightness(93%) contrast(84%);
+            }
+        }
     }
 
     &__left {
         display: flex;
         margin-right: clamp(0.625rem, -0.673rem + 5.77vw, 6.25rem); //100px-10px
+
+        @include mxw($md) {
+            display: none;
+        }
     }
 
     &__item {
@@ -33,21 +113,25 @@
     &__btn {
         position: relative;
         text-transform: uppercase;
-        color: $c-white;
-        font-size: 18px;
+        font-size: clamp(0.75rem, 0.663rem + 0.38vw, 1.125rem); //18px-12px
 
         &--about {
-            margin-right: 80px; //80px-10px
+            margin-right: 80px;
         }
 
-        &:hover{
+        &:hover {
             color: $c-accent;
             transition: color 0.3s ease-in-out;
         }
 
-        &.active{
+        &.inner-header{
+            color: $c-black;
+        }
+
+        &.active {
             color: $c-accent;
-            &::after{
+
+            &::after {
                 content: '';
                 position: absolute;
                 bottom: 0;
@@ -60,13 +144,19 @@
 
         &--about {
 
-        @include mxw($lg) {
-            margin-right: 60px;
+            @include mxw($lg) {
+                margin-right: 60px;
+            }
+        }
+
+        @include mxw($md) {
+            display: none;
         }
     }
-    }
 
-    &__logo {
+    &__center {
+        display: flex;
+        align-items: center;
         margin-right: clamp(0.625rem, -0.673rem + 5.77vw, 6.25rem); //100px-10px
     }
 
@@ -77,6 +167,7 @@
     }
 
     &__media-item {
+        position: relative;
         margin-right: clamp(0.625rem, 0.481rem + 0.64vw, 1.25rem);
 
         &:last-child {
@@ -87,8 +178,8 @@
     &__media-btn {
         position: relative;
         display: block;
-        width: clamp(1rem, 0.856rem + 0.64vw, 1.625rem); //26px-16px
-        height: clamp(1rem, 0.856rem + 0.64vw, 1.625rem);
+        width: clamp(1.375rem, 1.317rem + 0.26vw, 1.625rem); //26px-16px
+        height: clamp(1.375rem, 1.317rem + 0.26vw, 1.625rem);
 
         &--phone {
             width: clamp(1rem, 0.913rem + 0.38vw, 1.375rem); //22px-16px
@@ -117,9 +208,13 @@
             background-image: url('../images/icons/basket.svg');
         }
 
-        &:hover{
+        &:hover {
             filter: invert(4%) sepia(4%) saturate(4649%) hue-rotate(309deg) brightness(92%) contrast(89%);
             transition: filter 0.3s ease-in-out;
+        }
+
+        &.inner-header{
+            filter: invert(4%) sepia(4%) saturate(4649%) hue-rotate(309deg) brightness(92%) contrast(89%);
         }
     }
 
@@ -133,5 +228,13 @@
         color: $c-white;
         background-color: $c-black;
         border-radius: 100%;
+
+        &.basket-count-js{
+
+            &.color{
+                background-color: $c-accent;
+                color: $c-black;
+            }
+        }
     }
 }
