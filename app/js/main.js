@@ -10,7 +10,6 @@ function showOrHideSwiper() {
       item.classList.remove("swiper");
       item.firstElementChild.classList.remove("swiper-wrapper");
     });
-    
     arrows.forEach((arrow) => (arrow.style.display = "none"));
     return;
   }
