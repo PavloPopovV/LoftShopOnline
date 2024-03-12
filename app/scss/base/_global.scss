@@ -16,6 +16,7 @@ body {
 }
 
 .wrapper {
+    position: relative;
     height: 100%;
     overflow-x: hidden;
     display: grid;
@@ -75,4 +76,8 @@ section {
         color: $c-black;
         font-weight: 400;
     }
+}
+
+.new__arrow--prev{
+    transform: scale(-1);
 }
