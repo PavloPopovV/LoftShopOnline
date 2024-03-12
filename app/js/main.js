@@ -1,6 +1,15 @@
 const wrapper = document.querySelector(".wrapper");
 const header = document.querySelector(".header");
 const headerCount = document.querySelector(".basket-count-js");
+const bigGroup = document.querySelector(".product__big-group");
+
+function changeSliderPhoto(item) {
+  if (item.tagName === "VIDEO") {
+    bigGroup.innerHTML = `<video class="product__big-img" src="${item.src}" controls></video>`;
+  } else {
+    bigGroup.innerHTML = `<img class="product__big-img" src="${item.src}" loading="lazy">`;
+  }
+}
 
 function changeHeaderTextColorWhite(className) {
   const productPageHeader = document.querySelectorAll(className);
@@ -25,10 +34,11 @@ function checkClassForHeaderOnLoad() {
 
 function showOrHideSwiper() {
   const url = document.location.pathname;
+  console.log(url);
   const sliders = document.querySelectorAll(".swiper");
   const arrows = document.querySelectorAll(".carousel__arrow");
 
-  if ((url === "/" || url === "/index.html") && wrapper.clientWidth < 760) {
+  if (wrapper.clientWidth < 760) {
     sliders.forEach((item) => {
       item.classList.remove("swiper");
       item.firstElementChild.classList.remove("swiper-wrapper");
@@ -99,13 +109,15 @@ document.addEventListener("click", (e) => {
   if (target.classList.contains("mobile__close")) {
     document.querySelector(".mobile").classList.remove("active");
   }
-  if (target.classList.contains("catalog__input")) {
-    document.querySelector(".search-popup").classList.toggle("show");
-  }
-
-  if (target.classList.contains("js-add__subcategories")) {
+  if (target.classList.contains("product__description-btn")) {
     target.classList.toggle("active");
-    target.nextElementSibling.classList.toggle("show");
+    document
+      .querySelector(".product__description-text")
+      .classList.toggle("active");
+    document.querySelector(".product__description").classList.toggle("active");
+  }
+  if (target.classList.contains("product__small")) {
+    changeSliderPhoto(target);
   }
 });
 
