@@ -16,12 +16,11 @@ function changeHeaderTextColorWhite(className) {
   [...productPageHeader].forEach((btn) => btn.classList.add("inner-header"));
 }
 
-// function headerScrool() {
-//   const scrollTop = wrapper.scrollTop;
-//   header.classList.toggle("sticky", scrollTop >= 50);
-//   header.classList.toggle("animation", scrollTop >= 200);
-//   headerCount.classList.toggle("color", scrollTop >= 200);
-// }
+function headerScrool() {
+  const scrollTop = wrapper.scrollTop;
+  header.classList.toggle("sticky", scrollTop >= 100);
+  header.classList.toggle("animation", scrollTop >= 200);
+}
 
 function checkClass() {
   if (document.querySelector(".inner-page") !== null) {
@@ -127,6 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
   checkClass();
 });
 
-// wrapper.addEventListener("scroll", function () {
-//   headerScrool();
-// });
+wrapper.addEventListener("scroll", function () {
+  headerScrool();
+});
