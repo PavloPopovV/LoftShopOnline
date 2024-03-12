@@ -11,7 +11,7 @@
 
 <body>
 
-<div class="wrapper">
+<div class="wrapper inner-page">
 
     <header class="header">
   <div class="container">
@@ -29,11 +29,7 @@
           <span></span>
         </button>
         <a class="logo" href="index.html">
-          <img
-            class="logo__img logo__img--white header__logo"
-            src="./images/icons/logo-white.svg"
-            alt="логотип"
-          />
+          <img class="logo__img logo__img--white header__logo" src="./images/icons/logo-white.svg" alt="логотип" />
         </a>
       </div>
       <a class="header__btn header__btn--about" href="#">про нас</a>
@@ -46,7 +42,7 @@
         </li>
         <li class="header__media-item">
           <a href="product.html" class="header__media-btn header__media-btn--basket">
-            
+
           </a>
           <span class="header__media-count basket-count-js">0</span>
         </li>
@@ -57,11 +53,7 @@
     <button class="mobile__close"></button>
     <nav class="mobile__popup">
       <a class="logo mobile__logo" href="index.html">
-        <img
-          class="logo__img logo__img--white"
-          src="./images/icons/logo-black.svg"
-          alt="логотип"
-        />
+        <img class="logo__img logo__img--white" src="./images/icons/logo-black.svg" alt="логотип" />
       </a>
       <ul class="mobile__list">
         <li class="mobile__item">
@@ -105,28 +97,30 @@
           <a class="mobile__btn" href="#">Контакти</a>
         </li>
       </ul>
-      <ul class="mobile__media">
-        <li class="mobile__media-item">
-          <a class="mobile__media-link mobile__media-link--inst" href="">
-            loft.shoponline
-          </a>
-        </li>
-        <li class="mobile__media-item">
-          <a class="mobile__media-link mobile__media-link--email" href="mailto:loft.shoponline@gmail.com">
-            loft.shoponline@gmail.com
-          </a>
-        </li>
-        <li class="mobile__media-item">
-          <a class="mobile__media-link mobile__media-link--phone" href="tel:098 00 00 000">
-            +38(098) 00 00 000
-          </a>
-        </li>
-        <li class="mobile__media-item">
-          <a class="mobile__media-link mobile__media-link--location" href="">
-            Ukraine, Lviv 118 Roksoliana Street
-          </a>
-        </li>
-      </ul>
+      <div class="contacts">
+        <ul class="contacts__list">
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--inst" href="">
+              loft.shoponline
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--email" href="mailto:loft.shoponline@gmail.com">
+              loft.shoponline@gmail.com
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--phone" href="tel:098 00 00 000">
+              +38(098) 00 00 000
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--location" href="">
+              Ukraine, Lviv 118 Roksoliana Street
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
@@ -144,6 +138,153 @@
     <a class="breadcrumbs__link breadcrumbs__link--active" href="#">
       КАТАЛОГ
     </a>
+  </div>
+</section>
+
+      <section class="catalog">
+  <div class="container catalog__inner">
+    <aside class="filters catalog__filters">
+      <h2 class="filters__title">
+        Категорії
+      </h2>
+      <ul class="filters__list">
+        <li class="filters__item">
+          <a class="filters__link active" href="">Покривала</a>
+        </li>
+        <li class="filters__item">
+          <a class="filters__link" href="">Пледи</a>
+        </li>
+        <li class="filters__item">
+          <a class="filters__link" href="">Декоративні подушки</a>
+        </li>
+        <li class="filters__item">
+          <button class="filters__btn js-add__subcategories" type="button">Спальні аксесуари</button>
+          <ul class="filters__subcategories">
+            <li class="filters__item">
+              <a class="filters__link" href="">Наматрасник</a>
+            </li>
+            <li class="filters__item">
+              <a class="filters__link" href="">Ковдри</a>
+            </li>
+            <li class="filters__item">
+              <a class="filters__link" href="">Подушки</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h2 class="filters__title">
+        сортувати за
+      </h2>
+      <ul class="filters__list">
+        <li class="filters__item">
+          <a class="filters__link" href="">Мінімільна ціна</a>
+        </li>
+        <li class="filters__item">
+          <a class="filters__link" href="">Максимальна ціна</a>
+        </li>
+        <li class="filters__item">
+          <a class="filters__link" href="">Популярні товари</a>
+        </li>
+      </ul>
+    </aside>
+    <div class="catalog__products">
+      <div class="catalog__search">
+        <button class="catalog__open" type="button"></button>
+        <div class="catalog__wrapper">
+          <div class="catalog__group">
+            <label class="sr-only catalog__label" for="search">Пошук товарів на сайті</label>
+            <input class="input catalog__input" type="text" id="search" name="search" placeholder="Пошук">
+          </div>
+
+          <div class="search-popup catalog__popup">
+            <ul class="search-popup__list">
+              <li class="search-popup__item">
+                <a class="search-popup__link" href="">
+                  <i>Плед-покрив</i>ало косичка "Джинс" бавовняний
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <ul class="catalog__list">
+        <li class="catalog__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <div class="product-card__banners"></div>
+              <div class="product-card__img">
+                <img src="./images/1.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+              </div>
+              <h3 class="product-card__name">Aphrodite Premium</h3>
+              <span class="product-card__matherial">Сатин</span>
+              <div class="product-card__price">
+                <span class="product-card__new">₴ <span>3190.00 </span></span>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="catalog__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <div class="product-card__banners"></div>
+              <div class="product-card__img">
+                <img src="./images/1.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+              </div>
+              <h3 class="product-card__name">Aphrodite Premium</h3>
+              <span class="product-card__matherial">Сатин</span>
+              <div class="product-card__price">
+                <span class="product-card__new">₴ <span>3190.00 </span></span>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="catalog__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <div class="product-card__banners"></div>
+              <div class="product-card__img">
+                <img src="./images/1.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+              </div>
+              <h3 class="product-card__name">Aphrodite Premium</h3>
+              <span class="product-card__matherial">Сатин</span>
+              <div class="product-card__price">
+                <span class="product-card__new">₴ <span>3190.00 </span></span>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="catalog__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <div class="product-card__banners"></div>
+              <div class="product-card__img">
+                <img src="./images/1.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+              </div>
+              <h3 class="product-card__name">Aphrodite Premium</h3>
+              <span class="product-card__matherial">Сатин</span>
+              <div class="product-card__price">
+                <span class="product-card__new">₴ <span>3190.00 </span></span>
+              </div>
+            </a>
+          </article>
+        </li>
+        <li class="catalog__item">
+          <article class="product-card">
+            <a class="product-card__link" href="#">
+              <div class="product-card__banners"></div>
+              <div class="product-card__img">
+                <img src="./images/1.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+              </div>
+              <h3 class="product-card__name">Aphrodite Premium</h3>
+              <span class="product-card__matherial">Сатин</span>
+              <div class="product-card__price">
+                <span class="product-card__new">₴ <span>3190.00 </span></span>
+              </div>
+            </a>
+          </article>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
        
