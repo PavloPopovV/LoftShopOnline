@@ -11,7 +11,7 @@
 
 <body>
 
-<div class="wrapper">
+<div class="wrapper inner-page">
 
     <header class="header">
   <div class="container">
@@ -29,11 +29,7 @@
           <span></span>
         </button>
         <a class="logo" href="index.html">
-          <img
-            class="logo__img logo__img--white header__logo"
-            src="./images/icons/logo-white.svg"
-            alt="логотип"
-          />
+          <img class="logo__img logo__img--white header__logo" src="./images/icons/logo-white.svg" alt="логотип" />
         </a>
       </div>
       <a class="header__btn header__btn--about" href="#">про нас</a>
@@ -46,7 +42,7 @@
         </li>
         <li class="header__media-item">
           <a href="product.html" class="header__media-btn header__media-btn--basket">
-            
+
           </a>
           <span class="header__media-count basket-count-js">0</span>
         </li>
@@ -57,11 +53,7 @@
     <button class="mobile__close"></button>
     <nav class="mobile__popup">
       <a class="logo mobile__logo" href="index.html">
-        <img
-          class="logo__img logo__img--white"
-          src="./images/icons/logo-black.svg"
-          alt="логотип"
-        />
+        <img class="logo__img logo__img--white" src="./images/icons/logo-black.svg" alt="логотип" />
       </a>
       <ul class="mobile__list">
         <li class="mobile__item">
@@ -105,28 +97,30 @@
           <a class="mobile__btn" href="#">Контакти</a>
         </li>
       </ul>
-      <ul class="mobile__media">
-        <li class="mobile__media-item">
-          <a class="mobile__media-link mobile__media-link--inst" href="">
-            loft.shoponline
-          </a>
-        </li>
-        <li class="mobile__media-item">
-          <a class="mobile__media-link mobile__media-link--email" href="mailto:loft.shoponline@gmail.com">
-            loft.shoponline@gmail.com
-          </a>
-        </li>
-        <li class="mobile__media-item">
-          <a class="mobile__media-link mobile__media-link--phone" href="tel:098 00 00 000">
-            +38(098) 00 00 000
-          </a>
-        </li>
-        <li class="mobile__media-item">
-          <a class="mobile__media-link mobile__media-link--location" href="">
-            Ukraine, Lviv 118 Roksoliana Street
-          </a>
-        </li>
-      </ul>
+      <div class="contacts">
+        <ul class="contacts__list">
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--inst" href="">
+              loft.shoponline
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--email" href="mailto:loft.shoponline@gmail.com">
+              loft.shoponline@gmail.com
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--phone" href="tel:098 00 00 000">
+              +38(098) 00 00 000
+            </a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--location" href="">
+              Ukraine, Lviv 118 Roksoliana Street
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
@@ -148,7 +142,7 @@
   </div>
 </section>
 
-        <section class="product inner-page">
+        <section class="product">
   <div class="container">
     <div class="product__box">
       <div class="product__slider">
@@ -156,59 +150,26 @@
           <img class="product__big-img" src="./images/1.webp" loading="lazy" />
         </div>
         <div class="product__small-group">
-          <img
-            class="product__small"
-            src="./images/1.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="product__small"
-            src="./images/2.webp"
-            loading="lazy"
-            alt=""
-          />
-          <img
-            class="product__small"
-            src="./images/3.webp"
-            loading="lazy"
-            alt=""
-          />
-          <video
-            class="product__small"
-            src="./video/video.mp4"
-            controls
-          ></video>
+          <img class="product__small" src="./images/1.webp" loading="lazy" alt="" />
+          <img class="product__small" src="./images/2.webp" loading="lazy" alt="" />
+          <img class="product__small" src="./images/3.webp" loading="lazy" alt="" />
+          <video class="product__small" src="./video/video.mp4" controls></video>
         </div>
       </div>
       <div class="product__info">
         <h3 class="product__name">
           BEIGE TONE<span class="product__art">арт: 054521</span>
         </h3>
-        <span class="product__price"
-          ><span class="product__discount">₴ 2090.00</span>₴ 1890.00</span
-        >
+        <span class="product__price"><span class="product__discount">₴ 2090.00</span>₴ 1890.00</span>
         <ul class="product__colors">
           <li class="product__colors-item">
-            <a
-              class="product__colors-btn"
-              style="background-color: #8f7d65"
-              href="#"
-            ></a>
+            <a class="product__colors-btn" style="background-color: #8f7d65" href="#"></a>
           </li>
           <li class="product__colors-item">
-            <a
-              class="product__colors-btn"
-              style="background-color: #dbd4cc"
-              href="#"
-            ></a>
+            <a class="product__colors-btn" style="background-color: #dbd4cc" href="#"></a>
           </li>
           <li class="product__colors-item">
-            <a
-              class="product__colors-btn"
-              style="background-color: #dbd4cc"
-              href="#"
-            ></a>
+            <a class="product__colors-btn" style="background-color: #dbd4cc" href="#"></a>
           </li>
         </ul>
         <span class="product__subtitle">Розмір</span>
@@ -271,7 +232,6 @@
     </div>
   </div>
 </section>
-
 
         <section class="carousel new">
     <div class="container">

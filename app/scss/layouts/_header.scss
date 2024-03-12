@@ -11,16 +11,34 @@
 
     &.sticky {
         opacity: 0;
-        transform: translateY(-300px);
-        transition: all .3s linear;
+        transform: translateY(-200%);
+        transition: all .6s linear;
     }
     
     &.animation {
         opacity: 1;
         transform: translateY(0);
         background-color: $c-black;
-        transition: all .3s linear;
+        transition: all .6s linear;
         padding: 20px 0;
+
+        .header__btn{
+            color: $c-white;
+        }
+        .header__logo{
+            filter: none;
+        }
+        .header__media-btn{
+            filter: none;
+        }
+
+        .header__burger{
+            &::after,
+            &::before,
+            span {
+                background-color: $c-white;
+            }
+        }
     }
     
 
