@@ -7,6 +7,7 @@
     gap: 12px;
     font-size: clamp(0.75rem, 0.721rem + 0.13vw, 0.875rem); //12 - 14
     text-transform: uppercase;
+    color: rgba($c-black, 0.5);
   }
 
   &__link--active {

@@ -1,18 +1,27 @@
 const wrapper = document.querySelector(".wrapper");
 const header = document.querySelector(".header");
 const headerCount = document.querySelector(".basket-count-js");
+const bigGroup = document.querySelector(".product__big-group");
+
+function changeSliderPhoto(item) {
+  if (item.tagName === "VIDEO") {
+    bigGroup.innerHTML = `<video class="product__big-img" src="${item.src}" controls></video>`;
+  } else {
+    bigGroup.innerHTML = `<img class="product__big-img" src="${item.src}" loading="lazy">`;
+  }
+}
 
 function changeHeaderTextColorWhite(className) {
   const productPageHeader = document.querySelectorAll(className);
   [...productPageHeader].forEach((btn) => btn.classList.add("inner-header"));
 }
 
-function headerScrool() {
-  const scrollTop = wrapper.scrollTop;
-  header.classList.toggle("sticky", scrollTop >= 50);
-  header.classList.toggle("animation", scrollTop >= 200);
-  headerCount.classList.toggle("color", scrollTop >= 200);
-}
+// function headerScrool() {
+//   const scrollTop = wrapper.scrollTop;
+//   header.classList.toggle("sticky", scrollTop >= 50);
+//   header.classList.toggle("animation", scrollTop >= 200);
+//   headerCount.classList.toggle("color", scrollTop >= 200);
+// }
 
 function checkClass() {
   if (document.querySelector(".inner-page") !== null) {
@@ -25,10 +34,11 @@ function checkClass() {
 
 function showOrHideSwiper() {
   const url = document.location.pathname;
+  console.log(url);
   const sliders = document.querySelectorAll(".swiper");
   const arrows = document.querySelectorAll(".carousel__arrow");
 
-  if (url === "/" && wrapper.clientWidth < 760) {
+  if (wrapper.clientWidth < 760) {
     sliders.forEach((item) => {
       item.classList.remove("swiper");
       item.firstElementChild.classList.remove("swiper-wrapper");
@@ -100,6 +110,16 @@ document.addEventListener("click", (e) => {
   if (target.classList.contains("mobile__close")) {
     document.querySelector(".mobile").classList.remove("active");
   }
+  if (target.classList.contains("product__description-btn")) {
+    target.classList.toggle("active");
+    document
+      .querySelector(".product__description-text")
+      .classList.toggle("active");
+    document.querySelector(".product__description").classList.toggle("active");
+  }
+  if (target.classList.contains("product__small")) {
+    changeSliderPhoto(target);
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -107,6 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
   checkClass();
 });
 
-wrapper.addEventListener("scroll", function () {
-  headerScrool();
-});
+// wrapper.addEventListener("scroll", function () {
+//   headerScrool();
+// });

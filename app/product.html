@@ -134,14 +134,234 @@
 
     <main class="main">
 
+        <section class="breadcrumbs">
+  <div class="container breadcrumbs__inner">
+    <a class="breadcrumbs__link" href="index.html">
+      Головна сторінка
+    </a>
+    <span class="breadcrumbs__slash">
+      /
+    </span>
+    <a class="breadcrumbs__link breadcrumbs__link--active" href="#">
+      КАТАЛОГ
+    </a>
+  </div>
+</section>
+
         <section class="product inner-page">
-    <div class="container">
-        <p>hello world
-        </p>
+  <div class="container">
+    <div class="product__box">
+      <div class="product__slider">
+        <div class="product__big-group">
+          <img class="product__big-img" src="./images/1.webp" loading="lazy" />
+        </div>
+        <div class="product__small-group">
+          <img
+            class="product__small"
+            src="./images/1.webp"
+            loading="lazy"
+            alt=""
+          />
+          <img
+            class="product__small"
+            src="./images/2.webp"
+            loading="lazy"
+            alt=""
+          />
+          <img
+            class="product__small"
+            src="./images/3.webp"
+            loading="lazy"
+            alt=""
+          />
+          <video
+            class="product__small"
+            src="./video/video.mp4"
+            controls
+          ></video>
+        </div>
+      </div>
+      <div class="product__info">
+        <h3 class="product__name">
+          BEIGE TONE<span class="product__art">арт: 054521</span>
+        </h3>
+        <span class="product__price"
+          ><span class="product__discount">₴ 2090.00</span>₴ 1890.00</span
+        >
+        <ul class="product__colors">
+          <li class="product__colors-item">
+            <a
+              class="product__colors-btn"
+              style="background-color: #8f7d65"
+              href="#"
+            ></a>
+          </li>
+          <li class="product__colors-item">
+            <a
+              class="product__colors-btn"
+              style="background-color: #dbd4cc"
+              href="#"
+            ></a>
+          </li>
+          <li class="product__colors-item">
+            <a
+              class="product__colors-btn"
+              style="background-color: #dbd4cc"
+              href="#"
+            ></a>
+          </li>
+        </ul>
+        <span class="product__subtitle">Розмір</span>
+        <ul class="product__size">
+          <li class="product__size-item">
+            <button type="button" class="product__size-btn product__btn active">
+              150*210
+            </button>
+          </li>
+          <li class="product__size-item">
+            <button type="button" class="product__size-btn product__btn">
+              220*240
+            </button>
+          </li>
+          <li class="product__size-item">
+            <button type="button" class="product__size-btn product__btn">
+              240*260
+            </button>
+          </li>
+        </ul>
+        <span class="product__subtitle">МАТЕРІАЛ</span>
+        <button type="button" class="product__material product__btn">
+          TURKISH COTTON
+        </button>
+        <ul class="product__submit">
+          <li class="product__submit-item">
+            <button class="product__submit-btn">ЗАМОВИТИ</button>
+          </li>
+          <li class="product__submit-item">
+            <button class="product__submit-btn product__submit-btn--basket">
+              ДО КОШИКА
+            </button>
+          </li>
+        </ul>
+        <div class="product__description">
+          <button class="product__description-btn">
+            Особливості використання
+          </button>
+          <div class="product__description-text">
+            <ul class="product__description-list">
+              <li class="product__description-item">
+                <span>Опис :</span>
+                <p>
+                  Покривало виготовлене зі 100% натуральної бавовни, без
+                  будь-яких синтетичних домішок, що гарантує високу якість та
+                  довговічність.
+                </p>
+              </li>
+              <li class="product__description-item">
+                <span>Догляд :</span>
+                <p>
+                  Рекомендована температура прання - 30 °C. Використовуйте
+                  делікатний режим прання, щоб запобігти пошкодженню тканини.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
 
 
+        <section class="carousel new">
+    <div class="container">
+      <h2 class="title carousel__title">
+        Вам може сподобатись
+      </h2>
+  
+      <div class="carousel__inner">
+        <button class="carousel__arrow new__arrow--prev" type="button"></button>
+  
+        <div class="carousel__swiper new__swiper swiper">
+          <ul class="carousel__list swiper-wrapper">
+            <li class="carousel__item swiper-slide">
+              <article class="product-card new">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__img">
+                    <img src="./images/5.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                  </div>
+                  <h3 class="product-card__name">IZZI </h3>
+                  <span class="product-card__matherial">Мікрофібра</span>
+                  <div class="product-card__price">
+                    <span class="product-card__new">₴ <span>1370.00</span></span>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="carousel__item swiper-slide">
+              <article class="product-card sale">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__img">
+                    <img src="./images/6.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                  </div>
+                  <h3 class="product-card__name">Aphrodite Premium</h3>
+                  <span class="product-card__matherial">Сатин</span>
+                  <div class="product-card__price">
+                    <span class="product-card__new">₴ <span>3190.00 </span></span>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="carousel__item swiper-slide">
+              <article class="product-card new">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__img">
+                    <img src="./images/7.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                  </div>
+                  <h3 class="product-card__name">Косичка</h3>
+                  <span class="product-card__matherial">Мікрофібра</span>
+                  <div class="product-card__price">
+                    <span class="product-card__new">₴ <span>1300.00</span></span>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="carousel__item swiper-slide">
+              <article class="product-card new">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__img">
+                    <img src="./images/8.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                  </div>
+                  <h3 class="product-card__name">Вікторія Однот</h3>
+                  <span class="product-card__matherial">Жатка+Котон</span>
+                  <div class="product-card__price">
+                    <span class="product-card__new">₴ <span>2590.00 </span></span>
+                  </div>
+                </a>
+              </article>
+            </li>
+            <li class="carousel__item swiper-slide">
+              <article class="product-card new">
+                <a class="product-card__link" href="#">
+                  <div class="product-card__img">
+                    <img src="./images/9.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                  </div>
+                  <h3 class="product-card__name">Косичка</h3>
+                  <span class="product-card__matherial">Мікрофібра</span>
+                  <div class="product-card__price">
+                    <span class="product-card__new">₴ <span>790.00 </span></span>
+                  </div>
+                </a>
+              </article>
+            </li>
+          </ul>
+        </div>
+  
+        <button class="carousel__arrow new__arrow--next" type="button"></button>
+      </div>
+  
+    </div>
+  </section>
     </main>
 
     <footer class="footer">
