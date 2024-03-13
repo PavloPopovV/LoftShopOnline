@@ -1,0 +1,170 @@
+.comunication {
+    &__title {
+        margin-bottom: clamp(1.875rem, 1.533rem + 1.59vw, 3.438rem); //30-55
+    }
+
+    &__box {
+        display: grid;
+        grid-template-columns: clamp(21.563rem, 16.976rem + 21.27vw, 42.5rem) 1fr; //345-750
+        gap: clamp(0rem, -0.274rem + 1.27vw, 1.25rem); //0-20
+
+        @include mxw($mlg) {
+            grid-template-columns: none;
+            grid-template-rows: repeat(1, 1fr);
+            width: clamp(21.563rem, 16.702rem + 22.54vw, 43.75rem);
+        }
+
+    }
+
+    &__text {
+        font-size: clamp(0.75rem, 0.668rem + 0.38vw, 1.125rem); //12-18
+        margin-bottom: clamp(1.25rem, 1.113rem + 0.63vw, 1.875rem); //20-30
+
+
+    }
+
+    &__list {
+        position: relative;
+        padding-bottom: clamp(0.938rem, 0.595rem + 1.59vw, 2.5rem); //15-40
+        margin-bottom: clamp(0.938rem, 0.801rem + 0.63vw, 1.563rem); //15-25
+
+        &::after {
+            @include pseudo();
+            width: clamp(7.5rem, 6.815rem + 3.17vw, 10.625rem); //120-170
+            height: clamp(0.063rem, 0.049rem + 0.06vw, 0.125rem); //1-2
+            background-color: $c-silver;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+    &__item {
+        margin-bottom: clamp(0.5rem, 0.445rem + 0.25vw, 0.75rem); //8-12
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__link {
+        position: relative;
+        padding-left: clamp(1.5rem, 1.349rem + 0.7vw, 2.188rem); //24-35
+
+        &::after {
+            @include pseudo();
+            @include bg-image();
+            width: clamp(1rem, 0.945rem + 0.25vw, 1.25rem); //16-20
+            height: clamp(1rem, 0.945rem + 0.25vw, 1.25rem); //16-20
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            filter: invert(15%) sepia(11%) saturate(825%) hue-rotate(341deg) brightness(95%) contrast(84%);
+        }
+
+        &--location {
+            &::after {
+
+                background-image: url('../images/icons/location.svg');
+            }
+        }
+
+        &--phone {
+            &::after {
+                background-image: url('../images/icons/phone.svg');
+            }
+        }
+
+        &--email {
+            &::after {
+                background-image: url('../images/icons/email.svg');
+            }
+        }
+    }
+
+    &__media {
+        display: flex;
+    }
+
+    &__media-item {
+        margin-right: clamp(0.938rem, 0.869rem + 0.32vw, 1.25rem); //15-20
+        margin-bottom: clamp(0.938rem, 0.869rem + 0.32vw, 1.25rem);
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__media-link {
+        position: relative;
+        display: block;
+        width: 1.25rem;
+        height: 1.25rem;
+
+        &::after {
+            @include pseudo();
+            @include bg-image();
+            width: 1.25rem;
+            height: 1.25rem;
+            filter: invert(15%) sepia(11%) saturate(825%) hue-rotate(341deg) brightness(95%) contrast(84%);
+        }
+
+        &--instagram {
+            &::after {
+
+                background-image: url('../images/icons/inst.svg');
+            }
+        }
+
+        &--telegram {
+            &::after {
+                background-image: url('../images/icons/telegram.svg');
+            }
+        }
+    }
+
+    &__data {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        @include mxw($sm) {
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    &__input-group {
+        margin-bottom: clamp(0.625rem, 0.488rem + 0.63vw, 1.25rem); //10-20
+
+        textarea {
+            width: 100%;
+            border: 1px solid $c-silver;
+            padding: clamp(0.75rem, 0.723rem + 0.13vw, 0.875rem) 0 0 clamp(0.625rem, 0.488rem + 0.63vw, 1.25rem); //12-0-0-10
+            color: rgba($c-black, 0.6);
+
+            &:focus-within {
+                border: 1px solid $c-accent;
+            }
+        }
+    }
+
+    &__input {
+        width: 20rem; //100%
+        border: 1px solid $c-silver;
+        padding: clamp(0.625rem, 0.57rem + 0.25vw, 0.875rem) 0 clamp(0.625rem, 0.57rem + 0.25vw, 0.875rem) clamp(0.625rem, 0.488rem + 0.63vw, 1.25rem); //10-0-10-10
+        color: rgba($c-black, 0.6);
+
+        &:focus-within {
+            border: 1px solid $c-accent;
+        }
+
+        @include mxw($sm) {
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        text-transform: uppercase;
+        width: 100%;
+    }
+}

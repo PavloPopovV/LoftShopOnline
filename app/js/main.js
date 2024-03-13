@@ -2,6 +2,10 @@ const wrapper = document.querySelector(".wrapper");
 const header = document.querySelector(".header");
 const headerCount = document.querySelector(".basket-count-js");
 const bigGroup = document.querySelector(".product__big-group");
+const popup = document.querySelector(".popup");
+const termsBtns = document.querySelectorAll(".terms__btn");
+const termsDescription = document.querySelectorAll(".terms__decription");
+const termItems = document.querySelectorAll(".terms__item");
 
 function changeSliderPhoto(item) {
   if (item.tagName === "VIDEO") {
@@ -97,6 +101,32 @@ function showOrHideSwiper() {
       },
     },
   });
+
+  const swiperLike = new Swiper(".like__swiper", {
+    slidesPerView: 4,
+    spaceBetween: 73,
+    navigation: {
+      nextEl: ".like__btn--next",
+      prevEl: ".like__btn--prev",
+    },
+
+    breakpoints: {
+      560: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      960: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 4,
+      },
+    },
+  });
 }
 
 document.addEventListener("click", (e) => {
@@ -128,8 +158,33 @@ document.addEventListener("click", (e) => {
   ) {
     document.querySelector(".filters").classList.toggle("show");
   }
-  if(target.classList.contains('catalog__input')) {
-    document.querySelector('.search-popup').classList.toggle('show')
+  if (target.classList.contains("catalog__input")) {
+    document.querySelector(".search-popup").classList.toggle("show");
+  }
+  if (target.classList.contains("popup__close")) {
+    wrapper.classList.remove("lock");
+    popup.classList.remove("show");
+  }
+  if (target.classList.contains("basket-js")) {
+    wrapper.classList.add("lock");
+    popup.querySelector("h3").innerHTML = "Товар доданий до кошика";
+    popup.querySelector("p").innerHTML =
+      "Продовжуйте шопінг або перегляньте ваш кошик";
+    popup.classList.add("show");
+  }
+  if (target.classList.contains("promotion-form__btn")) {
+    wrapper.classList.add("lock");
+    popup.querySelector("h3").innerHTML = "Дякуємо за вашу зацікавленість";
+    popup.querySelector("p").innerHTML =
+      "Ми будемо повідомляти вас про нові товари, акції та інші цікаві події.";
+    popup.classList.add("show");
+  }
+
+  if (target.classList.contains("terms__btn")) {
+    termsTabs(target)
+    target.classList.add("active");
+    target.nextElementSibling.classList.add("show");
+    target.parentElement.classList.add('active')
   }
 });
 
@@ -141,3 +196,22 @@ document.addEventListener("DOMContentLoaded", () => {
 wrapper.addEventListener("scroll", function () {
   headerScroll();
 });
+
+
+function termsTabs(target){
+  if (!target.classList.contains("active")) {
+    termsBtns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+    termsDescription.forEach((content) => {
+      content.classList.remove("show");
+    });
+    termItems.forEach((item) => {
+      item.classList.remove("active");
+    });
+  }
+}
+
+
+
+

@@ -1,0 +1,30 @@
+.popup {
+    display: none;
+    position: fixed;
+    background-color: $c-white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: clamp(22.5rem, 17.045rem + 27.27vw, 37.5rem);
+    padding: clamp(1.875rem, 1.42rem + 2.27vw, 3.125rem) clamp(1.875rem, 0.511rem + 6.82vw, 5.625rem);//35-30
+
+    &.show {
+
+       display: block;
+
+    }
+
+    &__title {
+        font-size: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);//14-20
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: clamp(1.25rem, 1.023rem + 1.14vw, 1.875rem);//20-30
+        font-weight: 400;
+    }
+
+    &__text {
+        text-align: center;
+        font-size: clamp(0.75rem, 0.659rem + 0.45vw, 1rem); //12-16
+    }
+}

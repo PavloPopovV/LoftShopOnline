@@ -1,0 +1,118 @@
+.terms {
+    &__list {
+        position: relative;
+    }
+
+    &__item {
+        border-bottom: 1px solid $c-silver;
+        width: 20rem;
+        margin-bottom: clamp(0.625rem, 0.511rem + 0.57vw, 0.938rem); //10-15
+
+        &:last-child{
+            border-bottom: transparent;
+        }
+
+        &.active{
+            border-bottom: 1px solid $c-accent;
+            &:last-child{
+                border-bottom: transparent;
+            }
+        }
+
+        @include mxw($md) {
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        position: relative;
+        font-size: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);//14-20
+        margin-bottom: clamp(0.625rem, 0.511rem + 0.57vw, 0.938rem);//10-15
+        width: 100%;
+        text-align: left;
+        padding-left: 4px;
+        cursor: pointer;
+
+        &::after,
+        &::before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 2px;
+            background-color: #e0bea2;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%) rotate(0);
+        }
+
+        &::before {
+            transform: translateY(-50%) rotate(90deg);
+            transition: transform 0.3s linear;
+        }
+
+        &.active {
+            &::before {
+                transform: translateY(-50%) rotate(0);
+            }
+        }
+    }
+
+    &__decription {
+        transform: translateX(200%);
+        position: absolute;
+        width: 62rem;
+        left: 22rem;
+        top: 0;
+        height: 0;
+
+        &.show {
+            transform: translateX(0);
+            transition: transform 0.4s linear;
+            height: auto;
+        }
+
+        @include mxw($mlg) {
+            width: 44rem;
+
+        }
+        @include mxw($lg) {
+            width: 31rem;
+        }
+
+        @include mxw($md) {
+            position: relative;
+            left: 0;
+            width: 100%;
+        }
+    }
+
+    &__decription-title {
+        margin-bottom: clamp(1.125rem, 0.989rem + 0.68vw, 1.5rem);//18-24
+        @include mxw($md) {
+            display: none;
+        }
+    }
+
+    &__decription-item {
+        margin-bottom: clamp(0.75rem, 0.568rem + 0.91vw, 1.25rem);//12-20
+    }
+
+    &__decription-name {
+        display: block;
+        position: relative;
+        padding-left: clamp(1.125rem, 0.989rem + 0.68vw, 1.5rem);//18-24
+        font-size: clamp(0.875rem, 0.739rem + 0.68vw, 1.25rem);//14-20
+        margin-bottom: clamp(0.375rem, 0.284rem + 0.45vw, 0.625rem);//6-10
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: clamp(0.5rem, 0.455rem + 0.23vw, 0.625rem); //8-10
+            height: clamp(0.5rem, 0.455rem + 0.23vw, 0.625rem);//8-10
+            background-color: $c-accent;
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
