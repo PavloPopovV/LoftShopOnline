@@ -20,7 +20,7 @@ $vlg: 1600;
 @mixin bg-image {
     background-position: center;
     background-size: cover;
-    background-position: center;
+    background-repeat: no-repeat;
 }
 
 @mixin line-clamp($lines: 1) {

@@ -2,6 +2,7 @@
 
   &__title {
     margin-bottom: clamp(1.875rem, 1.514rem + 1.6vw, 3.438rem); // 30 - 55
+    transform: translateX(clamp(0rem, -1.818rem + 9.09vw, 5rem));
   }
 
   &__inner {
