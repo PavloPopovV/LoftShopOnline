@@ -1,11 +1,20 @@
 .product-card {
   position: relative;
   max-width: clamp(10.313rem, 8.654rem + 7.37vw, 17.5rem); // 165 - 280
+  
+  &:hover {
+    .product-card__img img {
+      transform: scale(1.1);
+    }
+  }
 
   &.sale .product-card__banners::after {
     display: block;
     content: "SALE";
+  }
 
+  &.sale .product-card__old {
+    display: block;
   }
 
   &.new .product-card__banners::before {
@@ -18,6 +27,7 @@
   }
 
   &__banners {
+    z-index: 2;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -26,7 +36,7 @@
     height: 3.5rem;
     right: 0;
     top: 10px;
-
+    
     @include mxw($xs) {
       height: 3rem;
     }
@@ -48,17 +58,18 @@
 
   &__img {
     margin-bottom: clamp(0.313rem, 0.154rem + 0.71vw, 1rem); // 5 - 16
-
+    overflow: hidden;
     img {
       display: block;
-      object-fit: contain;
+      object-fit: cover;
       width: 100%;
-      height: 100%;
+      height: clamp(8.75rem, 7.438rem + 5.83vw, 14.438rem); // 140 - 231
+      transition: transform .3s linear;
     }
   }
 
   &__name {
-    font-size: clamp(0.875rem, 0.731rem + 0.64vw, 1.5rem); //14 - 24
+    font-size: clamp(0.875rem, 0.6rem + 0.79vw, 1.5rem); //14 - 24
     font-weight: 500;
     line-height: 1.1;
   }
@@ -80,6 +91,7 @@
     color: $c-silver;
     text-decoration: line-through;
     margin-right: 3px;
+    display: none;
   }
 
   &__new {

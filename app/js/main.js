@@ -18,7 +18,7 @@ function changeHeaderTextColorWhite(className) {
 
 function headerScroll() {
   const scrollTop = wrapper.scrollTop;
-  header.classList.toggle("sticky", scrollTop >= 100);
+  header.classList.toggle("sticky", scrollTop >= 20);
   header.classList.toggle("animation", scrollTop >= 400);
 }
 
@@ -35,7 +35,7 @@ function showOrHideSwiper() {
   const url = document.location.pathname;
   console.log(url);
   const sliders = document.querySelectorAll(".swiper");
-  const arrows = document.querySelectorAll(".carousel__arrow");
+  const arrows = document.querySelectorAll(".btn-box");
 
   if (wrapper.clientWidth < 760) {
     sliders.forEach((item) => {
@@ -50,8 +50,8 @@ function showOrHideSwiper() {
     slidesPerView: 4,
     spaceBetween: 73,
     navigation: {
-      nextEl: ".carousel__arrow--next",
-      prevEl: ".carousel__arrow--prev",
+      nextEl: ".action__arrow--next",
+      prevEl: ".action__arrow--prev",
     },
 
     breakpoints: {
@@ -118,12 +118,24 @@ document.addEventListener("click", (e) => {
   if (target.classList.contains("product__small")) {
     changeSliderPhoto(target);
   }
+  if (target.classList.contains("js-add__subcategories")) {
+    target.classList.toggle("active");
+    target.nextElementSibling.classList.toggle("show");
+  }
+  if (
+    target.classList.contains("filters__close") ||
+    target.classList.contains("catalog__open")
+  ) {
+    document.querySelector(".filters").classList.toggle("show");
+  }
+  if(target.classList.contains('catalog__input')) {
+    document.querySelector('.search-popup').classList.toggle('show')
+  }
 });
 
 document.addEventListener("DOMContentLoaded", () => {
   showOrHideSwiper();
   checkClassForHeaderOnLoad();
-  // changeFiltersOnLoad();
 });
 
 wrapper.addEventListener("scroll", function () {

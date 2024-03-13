@@ -1,0 +1,63 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.625rem;
+}
+
+
+.page-number {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  padding: 10px 15px;
+  width: 2.5rem;
+  height: 2.5rem;
+  text-align: center;
+  color: $c-accent;
+  background-color: $c-white;
+  border: 1px solid $c-accent;
+  border-radius: 0;
+  transition: opacity .3s linear, transform .1s linear;
+  font-size: 1rem;
+  &:hover {
+    transform: scale(1.1); 
+  }
+}
+
+.current {
+  color: $c-white;
+  background-color: $c-accent;
+}
+
+.prev,
+.next {
+  font-size: 0;
+  color: transparent;
+  background-color: $c-accent;
+  &::after {
+    @include pseudo();
+    @include bg-image();
+    width: 1.3rem;
+    height: 1.3rem;
+    background-image: url('../images/icons/chevron-right.svg');
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.prev {
+  margin-right: 0.625rem;
+  transform: rotate(180deg);
+
+  &:hover {
+    transform: scale(1.1) rotate(180deg); 
+  }
+}
+.next {
+  margin-left: 0.625rem;
+}
