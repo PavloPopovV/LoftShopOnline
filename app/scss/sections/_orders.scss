@@ -9,8 +9,8 @@
   }
 
   &__list {
-    display: grid;
-    grid-template-rows: auto;
+    display: flex;
+    flex-direction: column;
     gap: clamp(0.938rem, 0.793rem + 0.64vw, 1.563rem); // 15 - 25
   }
 }

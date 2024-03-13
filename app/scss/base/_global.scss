@@ -9,7 +9,7 @@ html {
 
 body {
     font-family: $font_main;
-    font-size: clamp(0.75rem, 0.681rem + 0.31vw, 1rem);
+    font-size: clamp(0.75rem, 0.681rem + 0.31vw, 1rem); // 12 - 16
     line-height: 1.3;
     color: $c-black;
     background-color: $c-white;

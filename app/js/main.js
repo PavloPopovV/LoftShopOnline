@@ -129,6 +129,20 @@ function showOrHideSwiper() {
   });
 }
 
+function orderCount(target) {
+  const input = target.closest(".order__count").querySelector(".order__input");
+  let value = input.value;
+
+  if (target.className.includes("plus")) {
+    input.value = ++value;
+    return;
+  }
+  if (target.className.includes("minus") && +value - 1 > 0) {
+    input.value = --value;
+    return;
+  }
+}
+
 document.addEventListener("click", (e) => {
   const target = e.target;
 
@@ -160,6 +174,9 @@ document.addEventListener("click", (e) => {
   }
   if (target.classList.contains("catalog__input")) {
     document.querySelector(".search-popup").classList.toggle("show");
+  }
+  if (target.classList.contains("order__count-btn")) {
+    orderCount(target);
   }
   if (target.classList.contains("popup__close")) {
     wrapper.classList.remove("lock");
