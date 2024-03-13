@@ -127,7 +127,8 @@
 
 
     <main class="main">
-      <section class="breadcrumbs">
+
+        <section class="breadcrumbs">
   <div class="container breadcrumbs__inner">
     <a class="breadcrumbs__link" href="index.html">
       Головна сторінка
@@ -140,169 +141,118 @@
     </a>
   </div>
 </section>
-
-      <section class="orders">
-  <div class="container orders__container">
-    <h1 class="title orders__title">ВАШЕ ЗАМОВЛення</h1>
-
-    <ul class="orders__list">
-      <li class="orders__item">
-        <article class="order">
-          <div class="order__img">
-            <a class="order__link" href="">
-              <img src="./images/1.webp" alt="Картинка товару у кошику">
-            </a>
-          </div>
-          <div class="order__info">
-            <h2 class="order__name">BEIGE TONE</h2>
-            <span class="order__text order__text--art">арт: <span>432432</span></span>
-          </div>
-          <div class="order__details">
-            <span class="order__text order__text--size">Розмір : <span>150x210</span></span>
-            <span class="order__text order__material">матеріал : <span>Страйп - Сатин</span></span>
-          </div>
-
-          <div class="order__count">
-            <button class="order__count-btn" type="button">-</button>
-            <div class="order__group">
-              <label class="sr-only" for="number">Поле для відображення кількості товарі</label>
-              <input class="order__input" type="number" name="number" id="number" value="1">
-            </div>
-            <button class="order__count-btn" type="button">+</button>
-          </div>
-
-          <span class="order__price">₴ <span>2390.00</span></span>
-
-          <button class="order__delete" type="button"></button>
-        </article>
-      </li>
-      <li class="orders__item">
-        <article class="order">
-          <div class="order__img">
-            <img src="./images/2.webp" alt="Картинка товару у кошику">
-          </div>
-          <div class="order__info">
-            <h2 class="orders__name">BEIGE TONE</h2>
-            <span class="order__text order__text--art">арт: <span>432432</span></span>
-          </div>
-          <div class="order__details">
-            <span class="order__text order__text--size">Розмір : <span>150x210</span></span>
-            <span class="order__text order__material">матеріал : <span>Страйп - Сатин</span></span>
-          </div>
-
-          <div class="order__count">
-            <button class="order__count-btn" type="button">-</button>
-            <div class="order__group">
-              <label class="sr-only" for="number">Поле для відображення кількості товарі</label>
-              <input class="order__input" type="number" name="number" id="number" value="1">
-            </div>
-            <button class="order__count-btn" type="button">+</button>
-          </div>
-
-          <span class="order__price">₴ <span>2390.00</span></span>
-
-          <button class="order__delete" type="button"></button>
-        </article>
-      </li>
-
-    </ul>
-
-  </div>
-</section>
-       
-      <section class="order-form">
+        <section class="terms">
   <div class="container">
-    <h2 class="title order-form__title ">оформлення ЗАМОВЛЕННЯ</h2>
-
-    <form class="" name="orderForm">
-      <div class="order-form__inner">
-        <h3 class="order-form__category">Персональні дані:</h3>
-
-        <div class="order-form__box">
-          <div class="order-form__group">
-            <label class="sr-only" for="fullName">П.І.Б для замовлення.</label>
-            <input class="order-form__input" name="fullName" id="fullName" type="text" placeholder="П.І.Б" />
-            <span class="order-form__msg"></span>
-          </div>
-          <div class="order-form__group">
-            <label class="sr-only" for="phone">Поле для введення номера телефону</label>
-            <input class="order-form__input" name="phone" id="phone" type="phone" placeholder="Телефон*" />
-            <span class="order-form__msg"></span>
-          </div>
+    <ul class="terms__list">
+      <li class="terms__item active">
+        <button class="terms__btn active">Умови доставки</button>
+        <div class="terms__decription show">
+          <h3 class="terms__decription-title title">Умови доставки</h3>
+          <ul class="terms__decription-list">
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Кур'єрська доставка:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Ми пропонуємо кур'єрську доставку по всій території України.
+                  Вартість доставки залежить від місця призначення та ваги
+                  замовлення. Зазвичай доставка займає від 1 до 3 робочих днів.
+                </p>
+              </div>
+            </li>
+          </ul>
         </div>
-
-        <h3 class="order-form__category">Способи доставки:</h3>
-
-        <div class="order-form__box order-form__box--delivery">
-          <div class="order-form__group">
-            <label class="order-form__label" for="postType">Доставка Укр. Поштою</label>
-            <input class="order-form__radio" name="postType" id="postType" type="radio" />
-          </div>
-          <div class="order-form__group">
-            <label class="order-form__label" for="postType">Доставка Новою Поштою</label>
-            <input class="order-form__radio" name="postType" id="postType" type="radio" checked />
-          </div>
+      </li>
+      <li class="terms__item">
+        <button class="terms__btn">Умови оплати</button>
+        <div class="terms__decription">
+          <h3 class="terms__decription-title title">Умови оплати</h3>
+          <ul class="terms__decription-list">
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Самовивіз:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Ви також можете забрати своє замовлення самостійно з нашого
+                  магазину за адресою, яку ми надамо під час оформлення
+                  замовлення.
+                </p>
+              </div>
+            </li>
+          </ul>
         </div>
-
-        <div class="order-form__box">
-          <div class="order-form__group">
-            <label class="sr-only" for="city">Місто доставки</label>
-            <input class="order-form__input" name="city" id="city" type="text" placeholder="Місто" />
-            <span class="order-form__msg"></span>
-          </div>
-          <div class="order-form__group js-changeText">
-            <label class="sr-only" for="office">Номер Відділення або Індекс Укр Пошти</label>
-            <input class="order-form__input" name="office" id="office" type="text"
-              placeholder=" Адресса / Поштове відділення" />
-            <span class="order-form__msg"></span>
-          </div>
+      </li>
+      <li class="terms__item">
+        <button class="terms__btn">Умови обміну</button>
+        <div class="terms__decription">
+          <h3 class="terms__decription-title title">Умови обміну</h3>
+          <ul class="terms__decription-list">
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Поштова доставка:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Для віддалених регіонів України ми також пропонуємо поштову
+                  доставку через національний поштовий оператор або Нова Пошта.
+                  Терміни та вартість доставки будуть залежати від обраної
+                  послуги.
+                </p>
+              </div>
+            </li>
+          </ul>
         </div>
-
-        <h3 class="order-form__category">Cпособи оплати:</h3>
-
-        <div class="order-form__box order-form__box--payment">
-          <div class="order-form__group">
-            <label class="order-form__label" for="paymentType">Кредитні та дебетові картки</label>
-            <input class="order-form__radio" name="paymentType" id="paymentType" type="radio" />
-          </div>
-          <div class="order-form__group">
-            <label class="order-form__label" for="paymentType">Доставка Новою Поштою</label>
-            <input class="order-form__radio" name="paymentType" id="paymentType" type="radio" />
-          </div>
-          <div class="order-form__group">
-            <label class="order-form__label" for="paymentType">Електронні платіжні системи</label>
-            <input class="order-form__radio" name="paymentType" id="paymentType" type="radio" />
-          </div>
-          <div class="order-form__group">
-            <label class="order-form__label" for="paymentType">Оплата при отриманні (післяплата)</label>
-            <input class="order-form__radio" name="paymentType" id="paymentType" type="radio" checked />
-          </div>
-        </div>
-
-      </div>
-
-      <div class="order-form__result">
-        <h3 class="order-form__category">Підсумок:</h3>
-
-        <span class="order-form__amount">Загальна сума:  ₴<span>20,215</span></span>
-        <span class="order-form__goods"> Обрані товари: <span>3</span></span>
-
-        <div class="order-form__group">
-          <label class="order-form__label" for="details">Уточнити  деталі перед оформленням</label>
-          <input class="order-form__radio" name="details" id="details" type="radio" checked />
-        </div>
-
-        <button class="btn order-form__submit" type="submit">ОФОРМИТИ ЗАМОЛЕННЯ</button>
-        <span class="order-form__policy">Натискаючи на кнопку "ОФОРМИТИ замовлення", я приймаю умови політики конфіденційності.</span>
-      
-      </div>
-    </form>
-
-
-
-
+      </li>
+    </ul>
   </div>
 </section>
+
+        <section class="comunication">
+  <div class="container">
+    <h2 class="title comunication__title">Контактна інформація</h2>
+    <div class="comunication__box">
+      <div class="comunication__left">
+        <div class="comunication__text">
+          <p>
+            Зв'яжіться з нами за допомогою наведених нижче контактів або
+            надішліть запит для зворотнього звязку.
+          </p>
+        </div>
+        <ul class="comunication__list">
+          <li class="comunication__item">
+            <a class="comunication__link comunication__link--location" href="">Ukraine, Lviv 118 Roksoliana Street;</a>
+          </li>
+          <li class="comunication__item">
+            <a class="comunication__link comunication__link--phone" href="">+38(098) 00 00 000</a>
+          </li>
+          <li class="comunication__item">
+            <a class="comunication__link comunication__link--email" href="">loft.shoponline@gmail.com</a>
+          </li>
+        </ul>
+        <ul class="comunication__media">
+            <li class="comunication__media-item">
+                <a class="comunication__media-link comunication__media-link--instagram" href=""></a>
+            </li>
+            <li class="comunication__media-item">
+                <a class="comunication__media-link comunication__media-link--telegram" href=""></a>
+            </li>
+        </ul>
+      </div>
+      <form class="comunication__form">
+        <div class="comunication__data">
+            <div class="comunication__input-group">
+                <input class="comunication__input" type="text" placeholder="П.І.Б">
+            </div>
+            <div class="comunication__input-group">
+                <input class="comunication__input" type="text" placeholder="Телефон">
+            </div>
+        </div>
+        <div class="comunication__input-group">
+            <textarea name="" id="" cols="20" rows="5" placeholder="Опис"></textarea>
+        </div>
+        <button type="submit" class="comunication__btn btn">ЗАЛИШИТИ  ЗАЯВКУ</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+
     </main>
 
     <footer class="footer">
@@ -425,6 +375,7 @@
     </div>
   </div>
 </footer>
+
 
 </div>
 

@@ -27,34 +27,6 @@
   }
 
 
-  &__close {
-    cursor: pointer;
-    position: absolute;
-    right: 2rem;
-    top: 2rem;
-    width: 2rem;
-    height: 2rem;
-    background-color: transparent;
-    display: none;
-
-    @include mxw($sm) {
-      display: block;
-    }
-
-    &::before,
-    &::after {
-      @include pseudo();
-      width: 100%;
-      height: 2px;
-      background-color: $c-accent;
-      transform: rotate(-45deg);
-    }
-
-    &::after {
-      transform: rotate(45deg);
-    }
-  }
-
   &__title {
     margin-bottom: clamp(1.25rem, 1.192rem + 0.26vw, 1.5rem); //20 - 24
     font-weight: 500;
