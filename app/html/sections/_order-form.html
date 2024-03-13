@@ -1,8 +1,8 @@
 <section class="order-form">
-  <div class="container">
+  <div class="container order-form__container">
     <h2 class="title order-form__title ">оформлення ЗАМОВЛЕННЯ</h2>
 
-    <form class="" name="orderForm">
+    <form class="order-form__form" name="orderForm">
       <div class="order-form__inner">
         <h3 class="order-form__category">Персональні дані:</h3>
 
@@ -10,12 +10,12 @@
           <div class="order-form__group">
             <label class="sr-only" for="fullName">П.І.Б для замовлення.</label>
             <input class="order-form__input" name="fullName" id="fullName" type="text" placeholder="П.І.Б" />
-            <span class="order-form__msg"></span>
+            <span class="order-form__msg">msg</span>
           </div>
           <div class="order-form__group">
             <label class="sr-only" for="phone">Поле для введення номера телефону</label>
             <input class="order-form__input" name="phone" id="phone" type="phone" placeholder="Телефон*" />
-            <span class="order-form__msg"></span>
+            <span class="order-form__msg ">msg</span>
           </div>
         </div>
 
@@ -23,26 +23,26 @@
 
         <div class="order-form__box order-form__box--delivery">
           <div class="order-form__group">
-            <label class="order-form__label" for="postType">Доставка Укр. Поштою</label>
-            <input class="order-form__radio" name="postType" id="postType" type="radio" />
+            <input class="sr-only order-form__radio" name="postType" id="postTypeUkr" type="radio" />
+            <label class="order-form__label" for="postTypeUkr">Доставка Укр. Поштою</label>
           </div>
           <div class="order-form__group">
-            <label class="order-form__label" for="postType">Доставка Новою Поштою</label>
-            <input class="order-form__radio" name="postType" id="postType" type="radio" checked />
+            <input class="sr-only order-form__radio" name="postType" id="postTypeNova" type="radio" checked />
+            <label class="order-form__label" for="postTypeNova">Доставка Новою Поштою</label>
           </div>
-        </div>
+        </div>        
 
         <div class="order-form__box">
           <div class="order-form__group">
             <label class="sr-only" for="city">Місто доставки</label>
             <input class="order-form__input" name="city" id="city" type="text" placeholder="Місто" />
-            <span class="order-form__msg"></span>
+            <span class="order-form__msg">msg</span>
           </div>
           <div class="order-form__group js-changeText">
             <label class="sr-only" for="office">Номер Відділення або Індекс Укр Пошти</label>
             <input class="order-form__input" name="office" id="office" type="text"
               placeholder=" Адресса / Поштове відділення" />
-            <span class="order-form__msg"></span>
+            <span class="order-form__msg">msg</span>
           </div>
         </div>
 
@@ -50,20 +50,20 @@
 
         <div class="order-form__box order-form__box--payment">
           <div class="order-form__group">
-            <label class="order-form__label" for="paymentType">Кредитні та дебетові картки</label>
-            <input class="order-form__radio" name="paymentType" id="paymentType" type="radio" />
+            <input class="sr-only order-form__radio" name="paymentType" id="paymentTypeDeb" type="radio" />
+            <label class="order-form__label" for="paymentTypeDeb">Кредитні та дебетові картки</label>
           </div>
           <div class="order-form__group">
-            <label class="order-form__label" for="paymentType">Доставка Новою Поштою</label>
-            <input class="order-form__radio" name="paymentType" id="paymentType" type="radio" />
+            <input class="sr-only order-form__radio" name="paymentType" id="paymentTypeSend" type="radio" />
+            <label class="order-form__label" for="paymentTypeSend">Банківські перекази</label>
           </div>
           <div class="order-form__group">
-            <label class="order-form__label" for="paymentType">Електронні платіжні системи</label>
-            <input class="order-form__radio" name="paymentType" id="paymentType" type="radio" />
+            <input class="sr-only order-form__radio" name="paymentType" id="paymentTypeElec" type="radio" />
+            <label class="order-form__label" for="paymentTypeElec">Електронні платіжні системи</label>
           </div>
           <div class="order-form__group">
-            <label class="order-form__label" for="paymentType">Оплата при отриманні (післяплата)</label>
-            <input class="order-form__radio" name="paymentType" id="paymentType" type="radio" checked />
+            <input class="sr-only order-form__radio" name="paymentType" id="paymentTypeTake" type="radio" checked />
+            <label class="order-form__label" for="paymentTypeTake">Оплата при отриманні (післяплата)</label>
           </div>
         </div>
 
@@ -72,12 +72,12 @@
       <div class="order-form__result">
         <h3 class="order-form__category">Підсумок:</h3>
 
-        <span class="order-form__amount">Загальна сума:  ₴<span>20,215</span></span>
+        <span class="order-form__amount">Загальна сума:  <span>₴</span><span>20,215</span></span>
         <span class="order-form__goods"> Обрані товари: <span>3</span></span>
 
         <div class="order-form__group">
+          <input class="sr-only order-form__radio" name="details" id="details" type="radio" checked />
           <label class="order-form__label" for="details">Уточнити  деталі перед оформленням</label>
-          <input class="order-form__radio" name="details" id="details" type="radio" checked />
         </div>
 
         <button class="btn order-form__submit" type="submit">ОФОРМИТИ ЗАМОЛЕННЯ</button>

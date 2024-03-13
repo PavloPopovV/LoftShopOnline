@@ -3,12 +3,44 @@
   border: 1px solid $c-silver;
   display: flex;
   align-items: center;
+  gap: clamp(1rem, -11.833rem + 17.11vw, 8.7rem); // 16 - 140
 
-  &__link {
-    display: block;
+  @include mxw($sm) {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  &__left,
+  &__right {
+    width: 100%;
+    display: flex;
+  }
+
+
+  &__right {
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  &__left {
+    align-items: center;
+    gap: clamp(0.938rem, -0.625rem + 2.08vw, 1.875rem); // 15 - 30
+
+    @include mxw($lg) {
+      // min-inline-size: 28rem;
+    }
+
+    @include mxw($md) {
+      min-inline-size: auto;
+    }
   }
 
   &__img {
+    display: flex;
+    place-items: center;
+
+    // margin-right: clamp(0.938rem, 0.721rem + 0.96vw, 1.875rem); //15 - 30
     img {
       object-fit: cover;
       width: clamp(5rem, 4.351rem + 2.88vw, 7.813rem); //80 - 125
@@ -16,41 +48,104 @@
     }
   }
 
-  &__info {
-
-  }
+  &__info {}
 
   &__name {
     display: block;
     margin-bottom: 6px;
-    font-size: 1.25rem;
+    font-size: clamp(0.875rem, 0.788rem + 0.38vw, 1.25rem); // 14 - 20
     font-weight: 500;
     color: $c-black;
-    
+
     @include mxw($sm) {
       margin-bottom: 2px;
     }
   }
 
   &__text {
-    &--art {}
+    display: inline-block;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 0.333rem + 0.56vw, 1rem); // 12 - 16
 
-    &--size {}
+    span {
+      font-weight: 300;
+    }
   }
 
-  &__details {}
+  &__art {
+    display: block;
+    font-size: clamp(0.625rem, 0.538rem + 0.38vw, 1rem); // 10 - 16
 
-  &__material {}
+    span {
+      font-weight: 400;
+    }
+  }
 
-  &__count {}
+  &__count {
+    display: flex;
+    align-items: center;
+    border: 1px solid $c-silver;
+  }
 
-  &__count-btn {}
+  &__count-btn {
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: $c-accent;
+    padding: clamp(0.563rem, 0.505rem + 0.26vw, 0.813rem); // 
+    transition: color .3s linear, background-color .3s linear;
+
+
+    @include mxw($sm) {
+      padding: 3px 10px;
+    }
+
+    &:hover {
+      background-color: $c-accent;
+      color: $c-white;
+    }
+  }
 
   &__group {}
 
-  &__input {}
+  &__input {
+    width: clamp(2.5rem, 2.067rem + 1.92vw, 4.375rem);
+    height: 100%;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 400;
 
-  &__price {}
+    @include mxw($sm) {
+      font-size: 0.875rem;
+    }
+  }
 
-  &__delete {}
+  &__price {
+    font-size: clamp(1rem, 0.827rem + 0.77vw, 1.75rem); // 18 - 28
+
+    @include mxw($xs) {
+      transform: translateX(-1rem);
+    }
+  }
+
+  &__delete {
+
+    width: clamp(1.9rem, 1.731rem + 0.64vw, 2.5rem); // 30 - 40
+    height: clamp(1.9rem, 1.731rem + 0.64vw, 2.5rem); // 30 - 40
+    padding: 0.8rem;
+    cursor: pointer;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    background-color: $c-accent;
+    transition: transform .1s linear;
+    -webkit-mask-image: url('../images/icons/trash.svg');
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
 }

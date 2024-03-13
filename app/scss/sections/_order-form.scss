@@ -1,0 +1,143 @@
+.order-form {
+
+  &__container {
+    padding: 0 clamp(0.313rem, -0.38rem + 3.08vw, 3.313rem); // 0 - 53
+  }
+
+  &__title {
+    margin-bottom: clamp(1.875rem, 1.514rem + 1.6vw, 3.438rem); // 30 - 55 
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: auto 23rem;
+    gap: clamp(0.625rem, -7.292rem + 10.56vw, 5.375rem); // 10 - 86
+  }
+
+  &__inner {
+    max-width: 58rem;
+    width: 100%;
+  }
+
+  &__category {
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+
+    &--delivery {
+      margin-bottom: 1rem;
+    }
+
+    &--payment {
+      max-width: 43rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 0;
+    }
+  }
+
+  &__group {
+    position: relative;
+    width: 100%;
+
+    &.error .order-form__msg {
+      opacity: 1;
+    }
+
+    &.done .order-form__msg {
+      opacity: 1;
+      color: $c-green;
+    }
+  }
+
+  &__input {
+    border: 1px solid $c-silver;
+    color: $c-black;
+    width: 100%;
+    padding: clamp(0.625rem, 0.481rem + 0.64vw, 1.25rem) clamp(0.625rem, 0.567rem + 0.26vw, 0.875rem);
+
+    &:focus-within {
+      border-color: $c-accent;
+    }
+
+    &::placeholder {
+      font-size: clamp(0.75rem, 0.681rem + 0.31vw, 1rem); // 12 - 16
+      color: $c-silver;
+    }
+  }
+
+  &__msg {
+    position: absolute;
+    bottom: -1rem;
+    left: 0;
+    font-size: 0.8rem;
+    color: $c-red;
+    opacity: 0;
+  }
+
+  &__label {
+    padding: 5px 0 5px 40px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.2rem;
+      height: 1.2rem;
+      transition: .3s ease-in-out;
+      border-radius: 50%;
+      border: 1px solid $c-silver;
+      padding: 3px;
+      background-clip: content-box;
+    }
+  }
+
+  &__radio:checked+.order-form__label::after {
+    border-color: $c-silver;
+    background-color: $c-accent;
+  }
+
+  &__result {
+    width: 100%;
+  }
+
+  &__amount {
+    display: block;
+    font-size: clamp(0.875rem, 0.788rem + 0.38vw, 1.25rem); 
+    margin-bottom: 5px;
+    span {
+      font-weight: 500;
+      font-size: clamp(1.125rem, 1.038rem + 0.38vw, 1.5rem);
+      color: $c-accent;
+    }
+  }
+    
+  &__goods {
+    display: block;
+    font-size: clamp(0.875rem, 0.788rem + 0.38vw, 1.25rem); // 14 - 20
+    span {
+      font-weight: 500;
+      font-size: clamp(1.125rem, 1.096rem + 0.13vw, 1.25rem); // 18 - 20
+    }
+    margin-bottom: 1.2rem;
+  }
+
+  &__submit {
+    display: block;
+    width: 100%;
+    margin-bottom: 13px;
+  }
+
+  &__policy {
+    font-size: 0.8rem;
+  }
+}
