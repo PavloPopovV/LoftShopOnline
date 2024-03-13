@@ -1,0 +1,56 @@
+.order {
+  padding: clamp(0.625rem, 0.51rem + 0.51vw, 1.125rem); // 10 -18
+  border: 1px solid $c-silver;
+  display: flex;
+  align-items: center;
+
+  &__link {
+    display: block;
+  }
+
+  &__img {
+    img {
+      object-fit: cover;
+      width: clamp(5rem, 4.351rem + 2.88vw, 7.813rem); //80 - 125
+      height: clamp(5rem, 4.351rem + 2.88vw, 7.813rem); //80 - 125
+    }
+  }
+
+  &__info {
+
+  }
+
+  &__name {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: $c-black;
+    
+    @include mxw($sm) {
+      margin-bottom: 2px;
+    }
+  }
+
+  &__text {
+    &--art {}
+
+    &--size {}
+  }
+
+  &__details {}
+
+  &__material {}
+
+  &__count {}
+
+  &__count-btn {}
+
+  &__group {}
+
+  &__input {}
+
+  &__price {}
+
+  &__delete {}
+}

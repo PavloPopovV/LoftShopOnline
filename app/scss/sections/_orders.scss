@@ -1,0 +1,17 @@
+.orders {
+
+  &__title {
+    margin-bottom: clamp(1.875rem, 1.514rem + 1.6vw, 3.438rem); // 30 - 55 
+  }
+
+  &__container {
+    padding: 0 clamp(0.313rem, -0.38rem + 3.08vw, 3.313rem); // 0 - 53
+  }
+
+  &__list {
+    display: grid;
+    grid-template-rows: auto;
+    gap: clamp(0.938rem, 0.793rem + 0.64vw, 1.563rem); // 15 - 25
+  }
+}
+

@@ -18,6 +18,8 @@
 @import './components/product-card' ;
 @import './components/search-popup' ;
 @import './components/filters' ;
+@import './components/pagination' ;
+@import './components/order' ;
 
 //layouts
 @import './layouts/header' ;
@@ -31,3 +33,5 @@
 @import './sections/action' ;
 @import './sections/new' ;
 @import './sections/catalog' ;
+@import './sections/orders' ;
+@import './sections/basket' ;

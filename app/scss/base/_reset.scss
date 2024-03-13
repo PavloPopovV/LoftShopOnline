@@ -38,6 +38,11 @@ textarea {
     font: inherit;
     color: inherit;
     padding: 0;
+    background-color: transparent;
+}
+
+textarea{
+    resize: none;
 }
 
 label {

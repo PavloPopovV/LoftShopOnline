@@ -1,6 +1,60 @@
 .filters {
   max-width: clamp(14rem, 10.154rem + 8.21vw, 20rem);
 
+
+  @include mxw($sm) {
+    position: fixed;
+    display: flex;
+    max-width: 100%;
+    padding: 10px;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 11;
+    background-color: $c-white;
+    transform: translateX(-200%);
+    transition: .6s ease-in-out;
+
+    @include mxw($sm) {
+      &.show {
+        display: flex;
+        transform: translateX(0);
+      }
+    }
+  }
+
+
+  &__close {
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    display: none;
+
+    @include mxw($sm) {
+      display: block;
+    }
+
+    &::before,
+    &::after {
+      @include pseudo();
+      width: 100%;
+      height: 2px;
+      background-color: $c-accent;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+
   &__title {
     margin-bottom: clamp(1.25rem, 1.192rem + 0.26vw, 1.5rem); //20 - 24
     font-weight: 500;
@@ -17,7 +71,7 @@
   &__subcategories {
     position: relative;
     opacity: 0;
-    transform:translateY(-200%);
+    transform: translateY(-200%);
     z-index: 1;
     max-height: 0;
     height: 100%;
@@ -34,6 +88,7 @@
     overflow: hidden;
     background-color: $c-white;
     position: relative;
+
     &:not(:first-child) {
       border-top: 1px solid $c-silver;
     }
@@ -55,6 +110,7 @@
 
   &__btn {
     z-index: 2;
+
     &::before {
       @include pseudo();
       width: 10px;
@@ -73,6 +129,7 @@
   }
 
   &__link {
+
     &::before,
     &::after {
       @include pseudo();
