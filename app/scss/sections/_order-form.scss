@@ -84,6 +84,7 @@
   &__label {
     padding: 5px 0 5px 40px;
     position: relative;
+    cursor: pointer;
 
     &::after {
       content: "";
@@ -139,5 +140,8 @@
 
   &__policy {
     font-size: 0.8rem;
+    a{
+      text-decoration: underline;
+    }
   }
 }

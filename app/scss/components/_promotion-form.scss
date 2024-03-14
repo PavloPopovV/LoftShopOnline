@@ -1,11 +1,13 @@
 .promotion-form {
 
   &__group {
+    position: relative;
     width: 100%;
+    margin-bottom: clamp(0.938rem, 0.808rem + 0.58vw, 1.5rem); // 15-24
   }
 
   &__input {
-    margin-bottom: clamp(0.938rem, 0.808rem + 0.58vw, 1.5rem); // 15-24
+    
     width: 100%;
     &:focus{
       border: 1px solid $c-accent;
@@ -17,5 +19,12 @@
     width: 100%;
     cursor: pointer;
     
+  }
+
+  &__error{
+    width: 100%;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

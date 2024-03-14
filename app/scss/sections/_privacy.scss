@@ -1,0 +1,45 @@
+.privacy {
+
+    &__text {
+        font-size: clamp(0.875rem, 0.793rem + 0.38vw, 1.25rem);//14-20
+        margin-bottom: clamp(1.5rem, 1.418rem + 0.38vw, 1.875rem);//24-30
+    }
+
+    &__list {}
+
+    &__item {
+        margin-bottom: clamp(0.75rem, 0.64rem + 0.51vw, 1.25rem);//12-20
+    }
+
+    &__name {
+        display: block;
+        position: relative;
+        margin-bottom: clamp(0.375rem, 0.32rem + 0.25vw, 0.625rem);//6-10
+        font-size: clamp(0.875rem, 0.793rem + 0.38vw, 1.25rem);//14-20
+        padding-left: clamp(1.125rem, 1.029rem + 0.44vw, 1.563rem);//18-25
+
+        &::after{
+            @include pseudo();
+            width: clamp(0.5rem, 0.445rem + 0.25vw, 0.75rem);//8-12
+            height: clamp(0.5rem, 0.445rem + 0.25vw, 0.75rem);//8-12
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: $c-accent;
+        }
+    }
+
+    &__description {
+        font-size: clamp(0.75rem, 0.668rem + 0.38vw, 1.125rem);//12-18
+    }
+
+    &__contact {
+        display: block;
+        font-size: clamp(0.75rem, 0.668rem + 0.38vw, 1.125rem);//12-18
+
+        a{
+            color: $c-accent;
+            padding-left: 5px;
+        }
+    }
+}
