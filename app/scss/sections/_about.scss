@@ -1,0 +1,44 @@
+.about {
+
+
+
+    &__img {
+        display: block;
+        width: clamp(21.125rem, 7.133rem + 64.89vw, 85rem);//345-1360
+        height: clamp(14.063rem, 10.708rem + 15.56vw, 29.375rem);//225-470
+        margin: 0 auto clamp(1.875rem, 1.464rem + 1.9vw, 3.75rem); //30-60
+        object-fit: cover;
+    }
+
+
+
+    &__title {
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: clamp(1.125rem, 1.043rem + 0.38vw, 1.5rem);//18-24
+        margin-bottom: clamp(1.25rem, 1.031rem + 1.02vw, 2.25rem);//20-36
+        @include mxw($xs) {
+            text-align: left;
+            span{
+                display: none;
+            }
+        }
+    }
+
+
+
+    &__text {
+        text-align: center;
+        font-weight: 300;
+        font-size: clamp(0.875rem, 0.793rem + 0.38vw, 1.25rem);//14-20
+        p{
+            margin-bottom: clamp(1.25rem, 1.113rem + 0.63vw, 1.875rem);//20-30
+        }
+
+        @include mxw($xs) {
+            text-align: left;
+
+        }
+    }
+}

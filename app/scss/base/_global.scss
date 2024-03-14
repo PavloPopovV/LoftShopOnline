@@ -100,6 +100,16 @@ section {
     }
 }
 
+.error-msg{
+    display: none;
+    position: absolute;
+    color: $c-red;
+    font-size: clamp(0.625rem, 0.598rem + 0.13vw, 0.75rem);
+    &.show{
+        display: block;
+    }
+}
+
 
 .btn-box {
     cursor: pointer;
