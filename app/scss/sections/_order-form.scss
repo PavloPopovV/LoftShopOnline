@@ -12,6 +12,14 @@
     display: grid;
     grid-template-columns: auto 23rem;
     gap: clamp(0.625rem, -7.292rem + 10.56vw, 5.375rem); // 10 - 86
+
+    @include mxw($lg) {
+      grid-template-columns: auto 20rem;
+    }
+
+    @include mxw($md) {
+      grid-template-columns: none;
+    }
   }
 
   &__inner {
@@ -22,6 +30,10 @@
   &__category {
     font-weight: 400;
     margin-bottom: 1.2rem;
+
+    @include mxw($sm) {
+      margin-bottom: 10px;
+    }
   }
 
   &__box {
@@ -30,8 +42,19 @@
     gap: 0.8rem;
     margin-bottom: 1.6rem;
 
+    @include mxw($xs) {
+      flex-direction: column;
+      gap: 5px;
+      margin-bottom: 1.25rem;
+    }
+
     &--delivery {
       margin-bottom: 1rem;
+      flex-direction: row;
+
+      @include mxw($sm) {
+        margin-bottom: 10px;
+      }
     }
 
     &--payment {
@@ -39,7 +62,14 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       row-gap: 0;
+      margin-bottom: 0;
+
+      @include mxw($sm) {
+        grid-template-columns: none;
+      }
     }
+
+    
   }
 
   &__group {
@@ -82,9 +112,13 @@
   }
 
   &__label {
-    padding: 5px 0 5px 40px;
+    padding: 5px 0 5px 2.5rem;
     position: relative;
     cursor: pointer;
+
+    @include mxw($sm) {
+      padding: 5px 0 5px 24px;
+    }
 
     &::after {
       content: "";
@@ -99,6 +133,12 @@
       border: 1px solid $c-silver;
       padding: 3px;
       background-clip: content-box;
+
+      @include mxw($sm) {
+        width: 0.875rem;
+        height: 0.875rem;
+        padding: 2px;
+      }
     }
   }
 
@@ -113,22 +153,25 @@
 
   &__amount {
     display: block;
-    font-size: clamp(0.875rem, 0.788rem + 0.38vw, 1.25rem); 
+    font-size: clamp(0.875rem, 0.788rem + 0.38vw, 1.25rem);
     margin-bottom: 5px;
+
     span {
       font-weight: 500;
       font-size: clamp(1.125rem, 1.038rem + 0.38vw, 1.5rem);
       color: $c-accent;
     }
   }
-    
+
   &__goods {
     display: block;
     font-size: clamp(0.875rem, 0.788rem + 0.38vw, 1.25rem); // 14 - 20
+
     span {
       font-weight: 500;
       font-size: clamp(1.125rem, 1.096rem + 0.13vw, 1.25rem); // 18 - 20
     }
+
     margin-bottom: 1.2rem;
   }
 
@@ -140,7 +183,8 @@
 
   &__policy {
     font-size: 0.8rem;
-    a{
+
+    a {
       text-decoration: underline;
     }
   }
