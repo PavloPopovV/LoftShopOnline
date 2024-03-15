@@ -98,7 +98,7 @@
 
     &::placeholder {
       font-size: clamp(0.75rem, 0.681rem + 0.31vw, 1rem); // 12 - 16
-      color: $c-silver;
+      color: rgba($c-silver, 0.5);
     }
   }
 
@@ -178,11 +178,11 @@
   &__submit {
     display: block;
     width: 100%;
-    margin-bottom: 13px;
+    margin: 13px 0;
   }
 
   &__policy {
-    font-size: 0.8rem;
+    font-size: clamp(0.625rem, 0.598rem + 0.13vw, 0.75rem);
 
     a {
       text-decoration: underline;

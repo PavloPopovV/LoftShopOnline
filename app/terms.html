@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <title>LOFT.SHOPONLINE</title>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
@@ -35,7 +35,7 @@
       <a class="header__btn header__btn--about" href="about.html">про нас</a>
       <ul class="header__media">
         <li class="header__media-item">
-          <a href="#" class="header__media-btn header__media-btn--instagram"></a>
+          <a href="https://www.instagram.com/loft.shoponlline/" class="header__media-btn header__media-btn--instagram" target="_blank"></a>
         </li>
         <li class="header__media-item">
           <a href="tel:380000000000" class="header__media-btn header__media-btn--phone"></a>
@@ -59,10 +59,10 @@
           <a class="mobile__btn" href="index.html">Головна</a>
         </li>
         <li class="mobile__item">
-          <a class="mobile__btn" href="index.html#discount">Акційні пропозиції</a>
+          <a class="mobile__btn" href="index.html#discount" id="promo">Акційні пропозиції</a>
         </li>
         <li class="mobile__item">
-          <a class="mobile__btn" href="index.html#new-product">Новинки</a>
+          <a class="mobile__btn" href="index.html#new-product" id="new">Новинки</a>
         </li>
         <li class="mobile__item">
           <a class="mobile__btn" href="catalog.html">Каталог</a>
@@ -98,16 +98,16 @@
       </ul>
       <ul class="mobile__list mobile__list">
         <li class="mobile__item mobile__item--category">
-          <a class="mobile__btn mobile__btn--inst" href="#">loft.shoponline</a>
+          <a class="mobile__btn mobile__btn--inst" href="https://www.instagram.com/loft.shoponlline/" target="_blank">loft.shoponline</a>
         </li>
         <li class="mobile__item mobile__item--category">
-          <a class="mobile__btn mobile__btn--email" href="#">loft.shoponline@gmail.com</a>
+          <a class="mobile__btn mobile__btn--email" href="#" target="_blank">loft.shoponline@gmail.com</a>
         </li>
         <li class="mobile__item mobile__item--category">
-          <a class="mobile__btn mobile__btn--phone" href="#">+38(098) 00 00 000</a>
+          <a class="mobile__btn mobile__btn--phone" href="#" target="_blank">+38(098) 00 00 000</a>
         </li>
         <li class="mobile__item mobile__item--category">
-          <a class="mobile__btn mobile__btn--location" href="#">Ukraine, Lviv 118 Roksoliana Street</a>
+          <a class="mobile__btn mobile__btn--location" href="#" target="_blank">Ukraine, Lviv 118 Roksoliana Street</a>
         </li>
 
       </ul>
@@ -126,7 +126,7 @@
     <span class="breadcrumbs__slash">
       /
     </span>
-    <a class="breadcrumbs__link breadcrumbs__link--active" href="#">
+    <a class="breadcrumbs__link breadcrumbs__link--active" href="catalog.html">
       КАТАЛОГ
     </a>
   </div>
@@ -137,7 +137,7 @@
       <li class="terms__item active">
         <button class="terms__btn active">Умови доставки</button>
         <div class="terms__decription show">
-          <h3 class="terms__decription-title title">Умови доставки</h3>
+          <!-- <h3 class="terms__decription-title title">Умови доставки</h3> -->
           <ul class="terms__decription-list">
             <li class="terms__decription-item">
               <span class="terms__decription-name">Кур'єрська доставка:</span>
@@ -149,14 +149,6 @@
                 </p>
               </div>
             </li>
-          </ul>
-        </div>
-      </li>
-      <li class="terms__item">
-        <button class="terms__btn">Умови оплати</button>
-        <div class="terms__decription">
-          <h3 class="terms__decription-title title">Умови оплати</h3>
-          <ul class="terms__decription-list">
             <li class="terms__decription-item">
               <span class="terms__decription-name">Самовивіз:</span>
               <div class="terms__decription-text">
@@ -167,14 +159,6 @@
                 </p>
               </div>
             </li>
-          </ul>
-        </div>
-      </li>
-      <li class="terms__item">
-        <button class="terms__btn">Умови обміну</button>
-        <div class="terms__decription">
-          <h3 class="terms__decription-title title">Умови обміну</h3>
-          <ul class="terms__decription-list">
             <li class="terms__decription-item">
               <span class="terms__decription-name">Поштова доставка:</span>
               <div class="terms__decription-text">
@@ -183,6 +167,78 @@
                   доставку через національний поштовий оператор або Нова Пошта.
                   Терміни та вартість доставки будуть залежати від обраної
                   послуги.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="terms__item">
+        <button class="terms__btn">Умови оплати</button>
+        <div class="terms__decription">
+          <!-- <h3 class="terms__decription-title title">Умови оплати</h3> -->
+          <ul class="terms__decription-list">
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Часткова оплата:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Клієнт сплачує частину вартості товару або послуги перед отриманням, а решту суми - пізніше.
+                </p>
+              </div>
+            </li>
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Оплата при отримані:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Клієнт оплачує замовлення при отриманні товару або послуги під час доставки.
+                </p>
+              </div>
+            </li>
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Безготівковий переказ:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Клієнт переказує кошти на банківський рахунок компанії або використовує системи електронних платежів, такі як PayPal, Stripe тощо.
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="terms__item">
+        <button class="terms__btn">Умови обміну</button>
+        <div class="terms__decription">
+          <!-- <h3 class="terms__decription-title title">Умови обміну</h3> -->
+          <ul class="terms__decription-list">
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Термін обміну:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Товар може бути обмінений протягом 14 днів з моменту придбання. Після закінчення цього терміну обміну не буде здійснений.
+                </p>
+              </div>
+            </li>
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Стан товару:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Товар повинен бути в оригінальній упаковці та зі збереженими всіма заводськими ярликами. Товар не повинен бути використаний або пошкоджений.
+                </p>
+              </div>
+            </li>
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Умови обміну товару зі знижкою або акційного товару:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Товари, придбані за зниженими цінами або як часть акційних пропозицій, можуть бути обмінені лише на аналогічний товар або за еквівалентну суму, відповідно до умов політики обміну.
+                </p>
+              </div>
+            </li>
+            <li class="terms__decription-item">
+              <span class="terms__decription-name">Відповідальність за витрати на доставку:</span>
+              <div class="terms__decription-text">
+                <p>
+                  Витрати на доставку під час обміну товару несе клієнт, за винятком випадків, коли обмін здійснюється через помилку магазину або дефект товару.
                 </p>
               </div>
             </li>
@@ -271,7 +327,7 @@
         </a>
       </div>
       <div class="footer-nav footer-nav--catalog">
-        <a class="footer-nav__title footer__title" href="">
+        <a class="footer-nav__title footer__title" href="catalog.html">
           Каталог
         </a>
         <ul class="footer-nav__list ">
@@ -308,39 +364,39 @@
         </a>
         <ul class="footer-nav__list ">
           <li class="footer-nav__item">
-            <a class="footer-nav__link" href="">
+            <a class="footer-nav__link" href="index.html">
               Головна
             </a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-nav__link" href="">
+            <a class="footer-nav__link" href="index.html#discount">
               Акційні пропозиції
             </a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-nav__link" href="">
+            <a class="footer-nav__link" href="index.html#new-product">
               Новинки
             </a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-nav__link" href="">
+            <a class="footer-nav__link" href="terms.html">
               Умови
             </a>
           </li>
           <li class="footer-nav__item">
-            <a class="footer-nav__link" href="">
+            <a class="footer-nav__link" href="about.html">
               Про Нас
             </a>
           </li>
         </ul>
       </div>
       <div class="contacts footer__contacts">
-        <a class="contacts__title footer__title" href="">
+        <a class="contacts__title footer__title" href="terms.html#contacts">
           Контакти
         </a>
         <ul class="contacts__list">
           <li class="contacts__item">
-            <a class="contacts__link contacts__link--inst" href="">
+            <a class="contacts__link contacts__link--inst" href="https://www.instagram.com/loft.shoponlline/" target="_blank">
               loft.shoponline
             </a>
           </li>

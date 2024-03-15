@@ -39,7 +39,9 @@ textarea {
     font: inherit;
     color: inherit;
     padding: 0;
+    border-radius: 0;
     background-color: transparent;
+    transition: border .3s linear,background-color 5000s ease-in-out;
 }
 
 textarea {

@@ -1,4 +1,5 @@
 .product {
+    margin-bottom: clamp(0rem, -0.685rem + 3.17vw, 3.125rem);
 
     &__box {
         display: flex;
@@ -19,17 +20,20 @@
 
     &__slider {
         display: flex;
-        margin-right: clamp(1.25rem, 0.096rem + 5.13vw, 6.25rem);//20-100
+        margin-right: clamp(1.25rem, 0.155rem + 5.08vw, 6.25rem);//20-100
 
         @include mxw($lg) {
             flex-direction: column;
-            max-width: clamp(21.563rem, 20.365rem + 5.32vw, 26.75rem); //3345-428
         }
 
         @include mxw($md) {
             margin-bottom: 30px;
             margin-right: 0;
         }
+         @include mxw($xs) {
+            width: 100%;
+            height: auto;
+         }  
     }
 
     &__big-group {
@@ -41,9 +45,13 @@
             margin-right: 0;
             margin-bottom: clamp(0.5rem, 0.413rem + 0.38vw, 0.875rem); //8-14
         }
+         @include mxw($xs) {
+            width: 100%;
+        }
     }
 
     &__big-img {
+        object-fit: cover;
         width: 100%;
         height: 100%;
     }
@@ -51,7 +59,7 @@
     &__small-group {
         @include mxw($lg) {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
         }
     }
 
@@ -60,6 +68,7 @@
         width: clamp(5rem, 4.567rem + 1.92vw, 6.875rem); //80-110
         height: clamp(5rem, 4.567rem + 1.92vw, 6.875rem); //80-110
         margin-bottom: clamp(0rem, -0.26rem + 1.15vw, 1.125rem); //0-18
+        object-fit: cover;
         cursor: pointer;
 
         &:last-child {
@@ -67,6 +76,7 @@
         }
 
         @include mxw($lg) {
+
             margin-bottom: 0;
         }
     }
@@ -153,6 +163,15 @@
         margin-bottom: clamp(1rem, 0.798rem + 0.9vw, 1.875rem); //16-30
     }
 
+    &__submit{
+        margin-bottom: 1.75rem;
+
+        @include mxw($xs) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
     &__submit-item {
         margin-right: clamp(0.313rem, 0.038rem + 1.22vw, 1.5rem); //5-24
 
@@ -162,6 +181,7 @@
     }
 
     &__submit-btn {
+        display: block;
         position: relative;
         width: clamp(10.625rem, 9.471rem + 5.13vw, 15.625rem); //170-250
         height: clamp(2.5rem, 2.356rem + 0.64vw, 3.125rem); //40-50
@@ -185,6 +205,12 @@
                 transform: translateY(-50%);
                 background-image: url('/./images/icons/basket.svg');
             }
+        }
+
+        &--order{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         &:hover{

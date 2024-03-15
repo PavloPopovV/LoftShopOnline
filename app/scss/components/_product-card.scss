@@ -82,11 +82,11 @@
 
   &__price {
     display: flex;
-    align-items: center;
+    align-items: end;
   }
 
   &__old {
-    font-size: clamp(0.688rem, 0.558rem + 0.58vw, 1.25rem); // 11 - 20 
+    font-size:clamp(0.75rem, 0.64rem + 0.51vw, 1.25rem); // 12 - 20 
     font-weight: 400;
     color: $c-silver;
     text-decoration: line-through;
@@ -95,7 +95,7 @@
   }
 
   &__new {
-    font-size: clamp(0.813rem, 0.654rem + 0.71vw, 1.5rem); // 13 - 24
+    font-size: clamp(0.875rem, 0.738rem + 0.63vw, 1.5rem); // 14 - 24
     font-weight: 600;
     color: $c-accent;
   }
