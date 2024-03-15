@@ -2,6 +2,7 @@
     width: 100%;
     background-color: $c-silver;
     color: $c-white;
+    margin-bottom: clamp(0rem, -0.685rem + 3.17vw, 3.125rem);
 
     &__inner{
         height: 100vh;

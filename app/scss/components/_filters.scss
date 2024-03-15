@@ -1,7 +1,6 @@
 .filters {
   max-width: clamp(14rem, 10.154rem + 8.21vw, 20rem);
 
-
   @include mxw($sm) {
     position: fixed;
     display: flex;
@@ -119,6 +118,13 @@
 
     &.active::after {
       transform: translateY(-50%) rotate(0);
+    }
+  }
+
+  &__close{
+    display: none;
+    @include mxw($sm) {
+      display: block;
     }
   }
 }
