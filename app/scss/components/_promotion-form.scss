@@ -12,6 +12,10 @@
     &:focus{
       border: 1px solid $c-accent;
     }
+
+    &::placeholder{
+      color: rgba($c-silver, 0.5);
+    }
   }
 
   &__btn {
