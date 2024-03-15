@@ -91,12 +91,10 @@ section {
     padding: clamp(0.75rem, 0.635rem + 0.51vw, 1.25rem) 10px; // 12 - 20
     background-color: transparent;
     border: 1px solid $c-silver;
-    font-weight: 500;
 
     &::placeholder {
         text-align: center;
         color: $c-black;
-        font-weight: 400;
     }
 }
 
@@ -115,7 +113,6 @@ section {
     cursor: pointer;
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 5px;
     padding: 11px;
     background-color: $c-accent;
     position: relative;

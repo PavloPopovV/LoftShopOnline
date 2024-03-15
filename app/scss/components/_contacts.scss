@@ -6,7 +6,7 @@
   }
 
   &__link {
-    padding-left: 30px;
+    padding-left: clamp(1.25rem, 1.113rem + 0.63vw, 1.875rem);//20-30
     position: relative;
     transition: color .3s linear;
     &::after {
