@@ -9,11 +9,10 @@ const termItems = document.querySelectorAll(".terms__item");
 const contactsForm = document.forms.comunicationForm;
 const promotionForm = document.forms.promForm;
 const promotionInput = document.querySelector(".promotion-form__input");
-const mobileMenu = document.querySelector(".mobile")
-
+const mobileMenu = document.querySelector(".mobile");
 
 const patterns = {
-  adressPattern: /[а-яА-ЯЁё0-9\s.,\-]{2,}/,
+  addressPattern: /[а-яА-ЯЁё0-9\s.,\-]{2,}/,
   textPattern: /[а-яА-ЯЁё]{2,}/,
   namePattern: /^[а-яА-ЯҐґЄєІіЇї' -]{2,}$/,
   phonePattern: /^0\d{9}$/,
@@ -80,7 +79,6 @@ function checkClassForHeaderOnLoad() {
 
 function showOrHideSwiper() {
   const url = document.location.pathname;
-  console.log(url);
   const sliders = document.querySelectorAll(".swiper");
   const arrows = document.querySelectorAll(".btn-box");
 
@@ -185,16 +183,16 @@ function orderCount(target) {
     return;
   }
 }
-
-function popupTextShow(titleText, text) {
++function popupTextShow(titleText, text) {
   wrapper.classList.add("lock");
   popup.querySelector("h3").innerHTML = titleText;
   popup.querySelector("p").innerHTML = text;
   popup.classList.add("show");
-}
+};
 
 function inputValidation(input, pattern, error) {
-  const isValid = input.value.trim() !== "" && input.value.trim().match(pattern);
+  const isValid =
+    input.value.trim() !== "" && input.value.trim().match(pattern);
 
   if (isValid) {
     input.classList.remove("error");
@@ -203,34 +201,32 @@ function inputValidation(input, pattern, error) {
     input.nextElementSibling.innerHTML = error;
     input.nextElementSibling.classList.add("show");
     input.classList.add("error");
-    input.value='';
+    input.value = "";
   }
 }
 
-function contactFormValidation(){
+function contactFormValidation() {
   for (const input of contactsForm.elements) {
     switch (input.name) {
       case "name":
-        inputValidation(input, patterns.namePattern,  messages.errorName);
+        inputValidation(input, patterns.namePattern, messages.errorName);
         break;
       case "phone":
-        inputValidation(input, patterns.phonePattern,  messages.errorPhone);
-        break;
-      default:
+        inputValidation(input, patterns.phonePattern, messages.errorPhone);
         break;
     }
   }
 }
 
-function checkForm(form, popup){
+function checkForm(form, popup) {
   let hasError = false;
   for (const input of form.elements) {
-    if (input.tagName === "INPUT" && input.classList.contains('error')){
+    if (input.tagName === "INPUT" && input.classList.contains("error")) {
       hasError = true;
     }
   }
-  if (!hasError) { 
-    popupTextShow(popup.titleText, popup.text); 
+  if (!hasError) {
+    popupTextShow(popup.titleText, popup.text);
     form.reset();
   }
 }
@@ -292,14 +288,14 @@ document.addEventListener("click", (e) => {
 
   if (target.classList.contains("promotion-form__btn")) {
     e.preventDefault();
-    inputValidation(promotionInput, patterns.emailPattern,  messages.errorMail);
-    checkForm(promotionForm, promotionPopupText)
+    inputValidation(promotionInput, patterns.emailPattern, messages.errorMail);
+    checkForm(promotionForm, promotionPopupText);
   }
 
   if (target.classList.contains("comunication__btn")) {
     e.preventDefault();
     contactFormValidation();
-    checkForm(contactsForm, contactPopupText)
+    checkForm(contactsForm, contactPopupText);
   }
 
   if (target.classList.contains("terms__btn")) {
