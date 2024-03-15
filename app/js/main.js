@@ -183,7 +183,7 @@ function orderCount(target) {
     return;
   }
 }
-+function popupTextShow(titleText, text) {
+function popupTextShow(titleText, text) {
   wrapper.classList.add("lock");
   popup.querySelector("h3").innerHTML = titleText;
   popup.querySelector("p").innerHTML = text;
@@ -226,6 +226,7 @@ function checkForm(form, popup) {
     }
   }
   if (!hasError) {
+    console.log('send')
     popupTextShow(popup.titleText, popup.text);
     form.reset();
   }
@@ -298,6 +299,11 @@ document.addEventListener("click", (e) => {
     e.preventDefault();
     contactFormValidation(contactsForm);
     checkForm(contactsForm, contactPopupText)
+  }
+
+  if (target.classList.contains("order-form__submit")) {
+    e.preventDefault();
+    popupTextShow(orderPopupText.titleText, orderPopupText.text);
   }
 
   if (target.classList.contains("terms__btn")) {
