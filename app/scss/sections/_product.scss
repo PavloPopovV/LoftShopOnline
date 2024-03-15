@@ -19,17 +19,20 @@
 
     &__slider {
         display: flex;
-        margin-right: clamp(1.25rem, 0.096rem + 5.13vw, 6.25rem);//20-100
+        margin-right: clamp(1.25rem, 0.155rem + 5.08vw, 6.25rem);//20-100
 
         @include mxw($lg) {
             flex-direction: column;
-            max-width: clamp(21.563rem, 20.365rem + 5.32vw, 26.75rem); //3345-428
         }
 
         @include mxw($md) {
             margin-bottom: 30px;
             margin-right: 0;
         }
+         @include mxw($xs) {
+            width: 100%;
+            height: auto;
+         }  
     }
 
     &__big-group {
@@ -41,9 +44,13 @@
             margin-right: 0;
             margin-bottom: clamp(0.5rem, 0.413rem + 0.38vw, 0.875rem); //8-14
         }
+         @include mxw($xs) {
+            width: 100%;
+        }
     }
 
     &__big-img {
+        object-fit: cover;
         width: 100%;
         height: 100%;
     }
@@ -51,7 +58,7 @@
     &__small-group {
         @include mxw($lg) {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
         }
     }
 
@@ -60,6 +67,7 @@
         width: clamp(5rem, 4.567rem + 1.92vw, 6.875rem); //80-110
         height: clamp(5rem, 4.567rem + 1.92vw, 6.875rem); //80-110
         margin-bottom: clamp(0rem, -0.26rem + 1.15vw, 1.125rem); //0-18
+        object-fit: cover;
         cursor: pointer;
 
         &:last-child {
@@ -67,6 +75,7 @@
         }
 
         @include mxw($lg) {
+
             margin-bottom: 0;
         }
     }
@@ -151,6 +160,13 @@
 
     &__material {
         margin-bottom: clamp(1rem, 0.798rem + 0.9vw, 1.875rem); //16-30
+    }
+
+    &__submit{
+        margin-bottom: 1.75rem;
+        @include mxw($xs) {
+            justify-content: space-between;
+        }
     }
 
     &__submit-item {

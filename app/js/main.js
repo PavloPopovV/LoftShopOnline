@@ -23,7 +23,7 @@ const patterns = {
 const messages = {
   errorRequired: "Це поле обов'язкове. Не може бути порожнім",
   errorText: "Не менше двох символів, лише кирилиця",
-  errorName: "Від двох символів, лише кирилиця, без пробілів",
+  errorName: "Від двох символів, лише кирилиця",
   errorPhone: "Починайте з нуля, введіть 10 символів",
   errorMail: "Не менше 6 символів, знак @ та домен пошти",
   errorAdress: "Не менше двох символів",
@@ -207,8 +207,8 @@ function inputValidation(input, pattern, error) {
   }
 }
 
-function contactFormValidation(){
-  for (const input of contactsForm.elements) {
+function contactFormValidation(form){
+  for (const input of form.elements) {
     switch (input.name) {
       case "name":
         inputValidation(input, patterns.namePattern,  messages.errorName);
@@ -235,12 +235,14 @@ function checkForm(form, popup){
   }
 }
 
+
 document.addEventListener("click", (e) => {
   const target = e.target;
 
   if (target.classList.contains("header__burger")) {
     mobileMenu.classList.add("active");
   }
+
   if (target.classList.contains("mobile__btn")) {
     mobileMenu.classList.toggle("active");
   }
@@ -298,7 +300,7 @@ document.addEventListener("click", (e) => {
 
   if (target.classList.contains("comunication__btn")) {
     e.preventDefault();
-    contactFormValidation();
+    contactFormValidation(contactsForm);
     checkForm(contactsForm, contactPopupText)
   }
 

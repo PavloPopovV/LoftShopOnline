@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: minmax(clamp(14rem, 10.154rem + 8.21vw, 20rem), auto) 1fr;
     gap: clamp(1rem, -9rem + 13.33vw, 7rem); // 16 - 115
+    padding: 0 clamp(0rem, -0.685rem + 3.17vw, 3.125rem);
 
     @include mxw($sm) {
       grid-template-columns: 1fr;
@@ -29,8 +30,8 @@
     &::after{
       @include pseudo();
       @include bg-image();
-      width: 2rem;
-      height: 2rem;
+      width: 1.5rem;
+      height: 1.5rem;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -44,6 +45,7 @@
   }
 
   &__wrapper {
+    z-index: 9;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -112,5 +114,9 @@
       row-gap: 1rem;
       margin-bottom: 1.875rem;
     }
+  }
+
+  &__item{
+    max-width: clamp(10.313rem, 8.654rem + 7.37vw, 17.5rem);
   }
 }
