@@ -1,4 +1,5 @@
 .product {
+    margin-bottom: clamp(0rem, -0.685rem + 3.17vw, 3.125rem);
 
     &__box {
         display: flex;
@@ -164,7 +165,9 @@
 
     &__submit{
         margin-bottom: 1.75rem;
+
         @include mxw($xs) {
+            display: flex;
             justify-content: space-between;
         }
     }
@@ -178,6 +181,7 @@
     }
 
     &__submit-btn {
+        display: block;
         position: relative;
         width: clamp(10.625rem, 9.471rem + 5.13vw, 15.625rem); //170-250
         height: clamp(2.5rem, 2.356rem + 0.64vw, 3.125rem); //40-50
@@ -201,6 +205,12 @@
                 transform: translateY(-50%);
                 background-image: url('/./images/icons/basket.svg');
             }
+        }
+
+        &--order{
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         &:hover{
