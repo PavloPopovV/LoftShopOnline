@@ -42,10 +42,9 @@
     &__btn{
         text-transform: uppercase;
         font-size: clamp(1rem, 0.971rem + 0.13vw, 1.125rem);
-
+        transition: color 0.3s ease-in-out;
         &:hover{
             color: $c-accent;
-            transition: color 0.3s ease-in-out;
         }
     }
 }
