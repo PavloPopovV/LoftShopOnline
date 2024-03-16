@@ -72,8 +72,6 @@
         top: 0;
         height: 0;
 
-
-
         @include mxw($md) {
             display: block;
             transform: translateX(400%);
