@@ -90,11 +90,14 @@ export function clickHandler(e) {
     checkForm(contactsForm, popupMsg.contactPopupText);
   }
 
+  if (target.classList.contains("order-form__submit")) {
+    e.preventDefault();
+    popupTextShow(popupMsg.orderPopupText.titleText, popupMsg.orderPopupText.text);
+  }
+
   if (target.classList.contains("terms__btn")) {
     termsTabs(target);
-    target.classList.add("active");
-    target.nextElementSibling.classList.add("show");
-    target.parentElement.classList.add("active");
+
   }
 
   if(target.classList.contains('product__submit-btn')) {
