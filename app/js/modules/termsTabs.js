@@ -2,9 +2,9 @@ const termsBtns = document.querySelectorAll(".terms__btn");
 const termsDescription = document.querySelectorAll(".terms__decription");
 const termsDescPc = document.querySelectorAll(".terms__info-description");
 
-function removeActiveClass(elements, test = "show"){
+function removeActiveClass(elements, className = "show"){
   elements.forEach((item) => {
-    item.classList.remove(test);
+    item.classList.remove(className);
   });
 }
 
@@ -19,5 +19,4 @@ export function termsTabs(target) {
     }
   });
   target.nextElementSibling.classList.add("show");
-  target.parentElement.classList.add("active");
 }
