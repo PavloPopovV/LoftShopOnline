@@ -22,16 +22,17 @@
         transition: all .6s linear;
         padding: 20px 0;
 
-        .header__btn {
+        .header__btn{
             color: $c-white;
-
-            &:hover {
-                color: $c-accent;
-            }
+        }
+        .header__logo{
+            filter: none;
+        }
+        .header__media-btn{
+            filter: none;
         }
 
-        .header__burger {
-
+        .header__burger{
             &::after,
             &::before,
             span {

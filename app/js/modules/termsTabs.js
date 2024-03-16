@@ -1,17 +1,22 @@
 const termsBtns = document.querySelectorAll(".terms__btn");
 const termsDescription = document.querySelectorAll(".terms__decription");
-const termItems = document.querySelectorAll(".terms__item");
+const termsDescPc = document.querySelectorAll(".terms__info-description");
+
+function removeActiveClass(elements, className = "show"){
+  elements.forEach((item) => {
+    item.classList.remove(className);
+  });
+}
 
 export function termsTabs(target) {
-  if (!target.classList.contains("active")) {
-    termsBtns.forEach((btn) => {
-      btn.classList.remove("active");
-    });
-    termsDescription.forEach((content) => {
-      content.classList.remove("show");
-    });
-    termItems.forEach((item) => {
-      item.classList.remove("active");
-    });
-  }
+  termsDescPc.forEach((item) => {
+    if (target.id === item.id && !item.classList.contains("show")) {
+      removeActiveClass(termsDescPc)
+      removeActiveClass(termsDescription)
+      removeActiveClass(termsBtns, "active")
+      target.classList.add("active");
+      item.classList.add("show");
+    }
+  });
+  target.nextElementSibling.classList.add("show");
 }
