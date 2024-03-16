@@ -117,7 +117,8 @@
 
 
     <main class="main">
-      <section class="breadcrumbs">
+
+        <section class="breadcrumbs">
   <div class="container breadcrumbs__inner">
     <a class="breadcrumbs__link" href="index.html">
       Головна сторінка
@@ -131,139 +132,200 @@
   </div>
 </section>
 
-      <section class="orders">
-  <div class="container orders__container">
-    <h1 class="title orders__title">ВАШЕ ЗАМОВЛення</h1>
-
-    <ul class="orders__list">
-      <!-- <li class="orders__item">
-        <article class="order">
-          <div class="order__left">
-            <a class="order__img" href="product.html">
-              <img src="./images/1.webp" alt="Картинка товару у кошику">
+        <section class="product">
+  <div class="container">
+    <div class="product__box">
+      <div class="product__slider">
+        <div class="product__big-group">
+          <img class="product__big-img" src="./images/1.webp" loading="lazy" alt="Картинка товару" />
+        </div>
+        <div class="product__small-group">
+          <img class="product__small" src="./images/1.webp" loading="lazy" alt="Картинка товару" />
+          <img class="product__small" src="./images/2.webp" loading="lazy" alt="Картинка товару" />
+          <img class="product__small" src="./images/3.webp" loading="lazy" alt="Картинка товару" />
+          <video class="product__small" src="./video/video.mp4" controls></video>
+        </div>
+      </div>
+      <div class="product__info">
+        <h3 class="product__name">
+          BEIGE TONE<span class="product__art">арт: 032132</span>
+        </h3>
+        <span class="product__price"><span class="product__discount">₴ 2090.00</span>₴ <span class="js-price">1890.00</span></span>
+        <ul class="product__colors">
+          <li class="product__colors-item">
+            <a class="product__colors-btn active" style="background-color: #8f7d65" href="#">
+              <span class="sr-only">Коричневий: #8f7d65</span>
             </a>
-            <div class="order__info">
-              <h2 class="order__name">BEIGE TONE</h2>
-              <span class="order__text">Розмір : <span>150X210</span></span>
-              <span class="order__text">Матеріал : <span>Страйп - Сатин</span></span>
-              <span class="order__art">арт: <span>432432</span></span>
-            </div>
+          </li>
+          <li class="product__colors-item">
+            <a class="product__colors-btn" style="background-color: #dbd4cc" href="#"></a>
+          </li>
+          <li class="product__colors-item">
+            <a class="product__colors-btn" style="background-color: #dbd4cc" href="#"></a>
+          </li>
+        </ul>
+        <span class="product__subtitle">Розмір</span>
+        <ul class="product__size">
+          <li class="product__size-item">
+            <button type="button" class="product__size-btn product__btn active">
+              150*210
+            </button>
+          </li>
+          <li class="product__size-item">
+            <button type="button" class="product__size-btn product__btn">
+              220*240
+            </button>
+          </li>
+          <li class="product__size-item">
+            <button type="button" class="product__size-btn product__btn">
+              240*260
+            </button>
+          </li>
+        </ul>
+        <span class="product__subtitle">МАТЕРІАЛ</span>
+        <span type="button" class="product__material product__btn">
+          TURKISH COTTON
+        </span>
+        <ul class="product__submit">
+          <li class="product__submit-item">
+            <a href="basket.html" class="product__submit-btn product__submit-btn--order">ЗАМОВИТИ</a>
+          </li>
+          <li class="product__submit-item">
+            <button class="product__submit-btn product__submit-btn--basket basket-js">
+              ДО КОШИКА
+            </button>
+          </li>
+        </ul>
+        <div class="product__description">
+          <button class="product__description-btn">
+            Особливості використання
+          </button>
+          <div class="product__description-text">
+            <ul class="product__description-list">
+              <li class="product__description-item">
+                <span>Опис :</span>
+                <p>
+                  Покривало виготовлене зі 100% натуральної бавовни, без
+                  будь-яких синтетичних домішок, що гарантує високу якість та
+                  довговічність.
+                </p>
+              </li>
+              <li class="product__description-item">
+                <span>Догляд :</span>
+                <p>
+                  Рекомендована температура прання - 30 °C. Використовуйте
+                  делікатний режим прання, щоб запобігти пошкодженню тканини.
+                </p>
+              </li>
+            </ul>
           </div>
-          <div class="order__right">
-            <div class="order__count">
-              <button class="order__count-btn order__count-btn--minus" type="button">-</button>
-              <div class="order__group">
-                <label class="sr-only" for="number">Поле для відображення кількості товарі</label>
-                <input class="order__input" type="number" name="number" id="number" value="1">
-              </div>
-              <button class="order__count-btn order__count-btn--plus" type="button">+</button>
-            </div>
-
-            <span class="order__price">₴ <span>2390.00</span></span>
-
-            <button class="order__delete" type="button"></button>
-          </div>
-        </article>
-      </li
-      -->
-    </ul>
+        </div>
+      </div>
+    </div>
   </div>
+
+  
 </section>
-       
-      <section class="order-form">
-  <div class="container order-form__container">
-    <h2 class="title order-form__title ">оформлення ЗАМОВЛЕННЯ</h2>
 
-    <form class="order-form__form" name="orderForm">
-      <div class="order-form__inner">
-        <h3 class="order-form__category">Персональні дані:</h3>
+        <section class="carousel like">
+  <div class="container">
+    <h2 class="title carousel__title">
+      Вам може сподобатись
+    </h2>
 
-        <div class="order-form__box">
-          <div class="order-form__group">
-            <label class="sr-only" for="fullName">П.І.Б для замовлення.</label>
-            <input class="order-form__input" name="fullName" id="fullName" type="text" placeholder="П.І.Б" />
-            <span class="order-form__msg">msg</span>
-          </div>
-          <div class="order-form__group">
-            <label class="sr-only" for="phone">Поле для введення номера телефону</label>
-            <input class="order-form__input" name="phone" id="phone" type="phone" placeholder="Телефон*" />
-            <span class="order-form__msg ">msg</span>
-          </div>
-        </div>
+    <div class="carousel__inner">
+      <button class="btn-box btn-box--prev like__btn like__btn--prev" type="button"></button>
 
-        <h3 class="order-form__category">Способи доставки:</h3>
-
-        <div class="order-form__box order-form__box--delivery">
-          <div class="order-form__group">
-            <input class="sr-only order-form__radio" name="postType" id="postTypeUkr" type="radio" />
-            <label class="order-form__label" for="postTypeUkr">Укр. Поштою</label>
-          </div>
-          <div class="order-form__group">
-            <input class="sr-only order-form__radio" name="postType" id="postTypeNova" type="radio" checked />
-            <label class="order-form__label" for="postTypeNova">Новою Поштою</label>
-          </div>
-        </div>        
-
-        <div class="order-form__box">
-          <div class="order-form__group">
-            <label class="sr-only" for="city">Місто доставки</label>
-            <input class="order-form__input" name="city" id="city" type="text" placeholder="Місто" />
-            <span class="order-form__msg">msg</span>
-          </div>
-          <div class="order-form__group js-changeText">
-            <label class="sr-only" for="office">Номер Відділення або Індекс Укр Пошти</label>
-            <input class="order-form__input" name="office" id="office" type="text"
-              placeholder=" Адресса / Поштове відділення" />
-            <span class="order-form__msg">msg</span>
-          </div>
-        </div>
-
-        <h3 class="order-form__category">Cпособи оплати:</h3>
-
-        <div class="order-form__box order-form__box--payment">
-          <div class="order-form__group">
-            <input class="sr-only order-form__radio" name="paymentType" id="paymentTypeDeb" type="radio" />
-            <label class="order-form__label" for="paymentTypeDeb">Кредитні та дебетові картки</label>
-          </div>
-          <div class="order-form__group">
-            <input class="sr-only order-form__radio" name="paymentType" id="paymentTypeSend" type="radio" />
-            <label class="order-form__label" for="paymentTypeSend">Банківські перекази</label>
-          </div>
-          <div class="order-form__group">
-            <input class="sr-only order-form__radio" name="paymentType" id="paymentTypeElec" type="radio" />
-            <label class="order-form__label" for="paymentTypeElec">Електронні платіжні системи</label>
-          </div>
-          <div class="order-form__group">
-            <input class="sr-only order-form__radio" name="paymentType" id="paymentTypeTake" type="radio" checked />
-            <label class="order-form__label" for="paymentTypeTake">Оплата при отриманні (післяплата)</label>
-          </div>
-        </div>
-
+      <div class="carousel__swiper like__swiper swiper">
+        <ul class="carousel__list swiper-wrapper">
+          <li class="carousel__item swiper-slide">
+            <article class="product-card new">
+              <a class="product-card__link" href="#">
+                <div class="product-card__banners"></div>
+                <div class="product-card__img">
+                  <img src="./images/5.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                </div>
+                <h3 class="product-card__name">IZZI </h3>
+                <span class="product-card__matherial">Мікрофібра</span>
+                <div class="product-card__price">
+                  <span class="product-card__old">₴ <span>1100.00</span></span>
+                  <span class="product-card__new">₴ <span>1370.00</span></span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li class="carousel__item swiper-slide">
+            <article class="product-card new">
+              <a class="product-card__link" href="#">
+                <div class="product-card__banners"></div>
+                <div class="product-card__img">
+                  <img src="./images/6.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                </div>
+                <h3 class="product-card__name">Aphrodite Premium</h3>
+                <span class="product-card__matherial">Сатин</span>
+                <div class="product-card__price">
+                  <span class="product-card__old">₴ <span>1200.00</span></span>
+                  <span class="product-card__new">₴ <span>3190.00 </span></span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li class="carousel__item swiper-slide">
+            <article class="product-card new">
+              <a class="product-card__link" href="#">
+                <div class="product-card__banners"></div>
+                <div class="product-card__img">
+                  <img src="./images/7.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                </div>
+                <h3 class="product-card__name">Косичка</h3>
+                <span class="product-card__matherial">Мікрофібра</span>
+                <div class="product-card__price">
+                  <span class="product-card__old">₴ <span>1100.00</span></span>
+                  <span class="product-card__new">₴ <span>1400.00</span></span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li class="carousel__item swiper-slide">
+            <article class="product-card new">
+              <a class="product-card__link" href="#">
+                <div class="product-card__banners"></div>
+                <div class="product-card__img">
+                  <img src="./images/8.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                </div>
+                <h3 class="product-card__name">Вікторія Однот</h3>
+                <span class="product-card__matherial">Жатка+Котон</span>
+                <div class="product-card__price">
+                  <span class="product-card__old">₴ <span>2303.00</span></span>
+                  <span class="product-card__new">₴ <span>2590.00 </span></span>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li class="carousel__item swiper-slide">
+            <article class="product-card new">
+              <a class="product-card__link" href="#">
+                <div class="product-card__banners"></div>
+                <div class="product-card__img">
+                  <img src="./images/9.webp" alt="Картинка товару" width="262" height="231" loading="lazy">
+                </div>
+                <h3 class="product-card__name">Косичка</h3>
+                <span class="product-card__matherial">Мікрофібра</span>
+                <div class="product-card__price">
+                  <span class="product-card__old">₴ <span>630.00</span></span>
+                  <span class="product-card__new">₴ <span>790.00 </span></span>
+                </div>
+              </a>
+            </article>
+          </li>
+        </ul>
       </div>
 
-      <div class="order-form__result">
-        <h3 class="order-form__category">Підсумок:</h3>
-
-        <span class="order-form__amount">Загальна сума:  <span>₴</span><span>20,215</span></span>
-        <span class="order-form__goods"> Обрані товари: <span>3</span></span>
-
-        <div class="order-form__group">
-          <input class="sr-only order-form__radio" name="details" id="details" type="checkbox" checked />
-          <label class="order-form__label" for="details">Уточнити  деталі перед оформленням</label>
-        </div>
-
-        <button class="btn order-form__submit" type="submit">ОФОРМИТИ ЗАМОЛЕННЯ</button>
-        <span class="order-form__policy">Натискаючи на кнопку "офомити замовлення", я приймаю умови <a href="">політики конфіденційності</a> .</span>
-      
-      </div>
-    </form>
-
-
-
-
+      <button class="btn-box btn-box--next like__btn like__btn--next" type="button"></button>
+    </div>
+    
   </div>
-</section>
-      
+  </section>
     </main>
 
     <footer class="footer">
@@ -386,7 +448,6 @@
     </div>
   </div>
 </footer>
-    
     <div class="popup">
   <button type="button" class="popup__close close-btn"></button>
   <h3 class="popup__title">Hello World</h3>
@@ -394,6 +455,7 @@
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
   </div>
 </div>
+
 
 
 </div>

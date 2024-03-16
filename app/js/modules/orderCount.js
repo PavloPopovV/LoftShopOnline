@@ -22,6 +22,7 @@ export function sumCardPrice(target) {
 export function calcFullPrice() {
   const priceFields = document.querySelectorAll('.order__price span')
   const amountPrice = document.querySelectorAll('.order-form__amount span')
+  if(amountPrice.length === 0) return false;
   let res = [...priceFields].reduce((acc, item) => {
     return acc += +item.textContent
   }, 0)
