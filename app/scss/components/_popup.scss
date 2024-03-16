@@ -1,18 +1,19 @@
 .popup {
-    display: none;
+
     position: fixed;
     background-color: $c-white;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
     z-index: 100;
     width: clamp(22.5rem, 17.045rem + 27.27vw, 37.5rem);
     padding: clamp(1.875rem, 1.42rem + 2.27vw, 3.125rem) clamp(1.875rem, 0.511rem + 6.82vw, 5.625rem);//35-30
-
+    transition: opacity .3s ease-in-out, transform .3s linear;
+    
     &.show {
-
-       display: block;
-
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
     }
 
     &__title {

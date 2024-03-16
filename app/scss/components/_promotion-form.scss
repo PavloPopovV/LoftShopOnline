@@ -4,6 +4,10 @@
     position: relative;
     width: 100%;
     margin-bottom: clamp(0.938rem, 0.808rem + 0.58vw, 1.5rem); // 15-24
+
+    &.error .promotion-form__msg {
+      opacity: 1;
+    }
   }
 
   &__input {
@@ -25,10 +29,10 @@
     
   }
 
-  &__error{
-    width: 100%;
-    text-align: center;
+  &__msg{
+    bottom: -14px;
     left: 50%;
     transform: translateX(-50%);
+    text-align: center;
   }
 }
