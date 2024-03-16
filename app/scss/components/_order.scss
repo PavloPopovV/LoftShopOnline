@@ -133,6 +133,7 @@
     padding: 0.9rem;
     cursor: pointer;
     background-color: transparent;
+    transition: transform .1s linear;
 
     &::after{
       @include pseudo();
@@ -144,7 +145,6 @@
       height: clamp(1.9rem, 1.731rem + 0.64vw, 2.5rem); // 30 - 40
       top: 0;
       left: 0;
-
     }
 
     &:hover {

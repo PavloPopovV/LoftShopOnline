@@ -4,4 +4,5 @@ export const patterns = {
   namePattern: /^[а-яА-ЯҐґЄєІіЇї' -]{2,}$/,
   phonePattern: /^0\d{9}$/,
   emailPattern: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
+  emptyPattern: /.+/,
 };
