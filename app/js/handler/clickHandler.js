@@ -1,9 +1,8 @@
 //messages
-import { patterns } from "../patterns/patterns.js";
-import { messages, popupMsg } from "../ui_messages/messages.js";
+import { popupMsg } from "../ui_messages/messages.js";
 
 //functions
-import { inputValidation, formValidation, checkForm } from "../modules/formValidation.js";
+import { formValidation, checkForm } from "../modules/formValidation.js";
 import { changeSliderPhoto } from "../modules/changeSliderPhoto.js";
 import { popupTextShow } from "../modules/popup.js";
 import { termsTabs } from "../modules/termsTabs.js";
@@ -13,9 +12,11 @@ import { basketCount } from "../modules/headerAnimation.js";
 
 const wrapper = document.querySelector(".wrapper");
 const popup = document.querySelector(".popup");
-const contactsForm = document.forms.comunicationForm;
+
+const contactsForm = document.forms.communicationForm;
 const promotionForm = document.forms.promForm;
-const promotionInput = document.querySelector(".promotion-form__input");
+const orderForm = document.forms.orderForm;
+
 const mobileMenu = document.querySelector(".mobile");
 
 
@@ -79,11 +80,11 @@ export function clickHandler(e) {
 
   if (target.classList.contains("promotion-form__btn")) {
     e.preventDefault();
-    inputValidation(promotionInput, patterns.emailPattern, messages.errorMail);
+    formValidation(promotionForm);
     checkForm(promotionForm, popupMsg.promotionPopupText);
   }
 
-  if (target.classList.contains("comunication__btn")) {
+  if (target.classList.contains("communication-form__btn")) {
     e.preventDefault();
     formValidation(contactsForm);
     checkForm(contactsForm, popupMsg.contactPopupText);
@@ -108,5 +109,11 @@ export function clickHandler(e) {
     makeOrdersList()
     basketCount()
     calcFullPrice()
+  }
+
+  if(target.classList.contains('order-form__submit')) {
+    e.preventDefault();
+    formValidation(orderForm);
+    checkForm(orderForm, popupMsg.orderPopupText);
   }
 }

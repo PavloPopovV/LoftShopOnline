@@ -31,9 +31,14 @@ body {
     background-color: $c-white;
 }
 
-.lock {
-    overflow: hidden;
+
+
+.wrapper {
     position: relative;
+    height: 100%;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-rows: 1fr min-content;
 
     &::after {
         content: '';
@@ -42,18 +47,24 @@ body {
         right: 0;
         bottom: 0;
         position: fixed;
-        background: rgba(58, 58, 58, .7);
-        z-index: 50;
+        background-color: transparent;
+        z-index: -1;
+        transition: background-color .3s linear, z-index .6s linear;
     }
+
+    &.lock {
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+            background-color: rgba(58, 58, 58, .7);
+            z-index: 50;
+        }
+
+    }
+
 }
 
-.wrapper {
-    position: relative;
-    height: 100%;
-    overflow-x: hidden;
-    display: grid;
-    grid-template-rows: 1fr min-content;
-}
 
 .container {
     max-width: clamp(21.875rem, 2.49rem + 86.15vw, 91.875rem); // 350-1470
@@ -114,17 +125,6 @@ section {
     }
 }
 
-.error-msg {
-    display: none;
-    position: absolute;
-    color: $c-red;
-    font-size: clamp(0.625rem, 0.598rem + 0.13vw, 0.75rem);
-
-    &.show {
-        display: block;
-    }
-}
-
 
 .btn-box {
     cursor: pointer;
@@ -154,6 +154,15 @@ section {
     &--prev {
         transform: scale(-1);
     }
+}
+
+.form-msg {
+    position: absolute;
+    color: $c-red;
+    font-size: clamp(0.625rem, 0.598rem + 0.13vw, 0.75rem);
+    opacity: 0;
+    width: 100%;
+    transition: opacity .2s linear;
 }
 
 .close-btn {
