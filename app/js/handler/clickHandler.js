@@ -8,6 +8,8 @@ import { changeSliderPhoto } from "../modules/changeSliderPhoto.js";
 import { popupTextShow } from "../modules/popup.js";
 import { termsTabs } from "../modules/termsTabs.js";
 import { calcFullPrice, orderCountField, sumCardPrice } from "../modules/orderCount.js";
+import { addProductToBasket, deleteOrder, makeOrdersList } from "../modules/cart.js";
+import { basketCount } from "../modules/headerAnimation.js";
 
 const wrapper = document.querySelector(".wrapper");
 const popup = document.querySelector(".popup");
@@ -92,5 +94,16 @@ export function clickHandler(e) {
     target.classList.add("active");
     target.nextElementSibling.classList.add("show");
     target.parentElement.classList.add("active");
+  }
+
+  if(target.classList.contains('product__submit-btn')) {
+    addProductToBasket()
+  } 
+
+  if(target.classList.contains('order__delete')) {
+    deleteOrder(target)
+    makeOrdersList()
+    basketCount()
+    calcFullPrice()
   }
 }
