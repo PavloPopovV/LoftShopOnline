@@ -1,8 +1,9 @@
-import { popupTextShow } from "./popup.js";
+
 import { patterns } from "../patterns/patterns.js";
 import { messages } from "../ui_messages/messages.js";
+import { formSend } from "../chatBot/tgBot.js";
 
-export function inputValidation(input, pattern, error) {
+function inputValidation(input, pattern, error) {
   const isValid =
     input.value.trim() !== "" && input.value.trim().match(pattern);
   const group = input.closest("div");
@@ -17,7 +18,7 @@ export function inputValidation(input, pattern, error) {
   }
 }
 
-export function formValidation(form) {
+function formValidation(form) {
   for (const input of form.elements) {
     switch (input.name) {
       case "name":
@@ -39,18 +40,16 @@ export function formValidation(form) {
   }
 }
 
-export function checkForm(form, popup) {
+export function checkForm(form) {
+  formValidation(form)
   const groups = document.querySelectorAll("[class*=form__group]");
   let hasError = [...groups].every(
     (group) => !group.classList.contains("error")
   );
 
   if (hasError) {
-    popupTextShow(popup.titleText, popup.text);
+    formSend(form)
     form.reset();
   }
 }
 
-export function makeSubmitObj() {
-  
-}

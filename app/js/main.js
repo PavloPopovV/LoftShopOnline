@@ -1,10 +1,9 @@
 const wrapper = document.querySelector(".wrapper");
 
-import { headerScroll, basketCount } from "./modules/headerAnimation.js";
-import { checkClassForHeaderOnLoad } from "./modules/headerAnimation.js";
+import { headerScroll, basketCount, checkClassForHeaderOnLoad } from "./modules/headerManipulation.js";
 import { clickHandler } from "./handler/clickHandler.js";
 import { calcFullPrice } from "./modules/orderCount.js";
-import { makeOrdersList } from "./modules/cart.js";
+import { renderEmptyBasketOrMakeOrdersList } from "./modules/cart.js";
 
 
 //Swiper
@@ -108,8 +107,11 @@ document.addEventListener("DOMContentLoaded", () => {
   basketCount()
   checkClassForHeaderOnLoad();
   showOrHideSwiper();
-  makeOrdersList()
-  calcFullPrice()
+  
+  if(document.querySelector('.orders')) {
+    renderEmptyBasketOrMakeOrdersList()
+    calcFullPrice()
+  }
 });
 
 

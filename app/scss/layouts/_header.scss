@@ -7,19 +7,17 @@
     width: 100%;
     padding-top: clamp(0.938rem, 0.505rem + 1.92vw, 2.813rem); //45-15
     color: $c-white;
-
+    transition: all .3s linear;
 
     &.sticky {
         opacity: 0;
         transform: translateY(-200%);
-        transition: all .6s linear;
     }
 
     &.animation {
         opacity: 1;
         transform: translateY(0);
         background-color: $c-black;
-        transition: all .6s linear;
         padding: 20px 0;
 
         .header__btn{
@@ -234,6 +232,7 @@
     }
 
     &__media-count {
+        cursor: pointer;
         position: absolute;
         z-index: 10;
         right: -2px;
