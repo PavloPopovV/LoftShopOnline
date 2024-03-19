@@ -2,13 +2,13 @@
 import { popupMsg } from "../ui_messages/messages.js";
 
 //functions
-import { formValidation, checkForm } from "../modules/formValidation.js";
+import { checkForm } from "../modules/formValidation.js";
 import { changeSliderPhoto } from "../modules/changeSliderPhoto.js";
 import { popupTextShow } from "../modules/popup.js";
-import { termsTabs } from "../modules/termsTabs.js";
+import { changeSize, termsTabs } from "../modules/tabs.js";
 import { calcFullPrice, orderCountField, sumCardPrice } from "../modules/orderCount.js";
-import { addProductToBasket, deleteOrder, makeOrdersList } from "../modules/cart.js";
-import { basketCount } from "../modules/headerAnimation.js";
+import { addProductToBasket, deleteOrder, renderEmptyBasketOrMakeOrdersList } from "../modules/cart.js";
+import { basketCount } from "../modules/headerManipulation.js";
 
 const wrapper = document.querySelector(".wrapper");
 const popup = document.querySelector(".popup");
@@ -80,19 +80,12 @@ export function clickHandler(e) {
 
   if (target.classList.contains("promotion-form__btn")) {
     e.preventDefault();
-    formValidation(promotionForm);
-    checkForm(promotionForm, popupMsg.promotionPopupText);
+    checkForm(promotionForm);
   }
 
   if (target.classList.contains("communication-form__btn")) {
     e.preventDefault();
-    formValidation(contactsForm);
-    checkForm(contactsForm, popupMsg.contactPopupText);
-  }
-
-  if (target.classList.contains("order-form__submit")) {
-    e.preventDefault();
-    popupTextShow(popupMsg.orderPopupText.titleText, popupMsg.orderPopupText.text);
+    checkForm(contactsForm);
   }
 
   if (target.classList.contains("terms__btn")) {
@@ -106,14 +99,17 @@ export function clickHandler(e) {
 
   if(target.classList.contains('order__delete')) {
     deleteOrder(target)
-    makeOrdersList()
+    renderEmptyBasketOrMakeOrdersList()
     basketCount()
     calcFullPrice()
   }
 
   if(target.classList.contains('order-form__submit')) {
     e.preventDefault();
-    formValidation(orderForm);
-    checkForm(orderForm, popupMsg.orderPopupText);
+    checkForm(orderForm);
+  }
+
+  if(target.classList.contains('product__size-btn')) {
+    changeSize(target)
   }
 }
