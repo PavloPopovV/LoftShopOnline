@@ -102,7 +102,7 @@ function currentPopupMsg(form, paymentIDArg) {
 }
 
 export async function formSend(form) {
-
+  // Тут api
   const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
   const paymentID = generateRandomNumber();

@@ -161,5 +161,4 @@ function changeDelivery() {
   }
   orderForm.office.placeholder = " Адресса / Поштове відділення";
 }
-
 orderForm ? orderForm.addEventListener("change", changeDelivery) : "";

@@ -226,7 +226,6 @@
         font-size: clamp(0.875rem, 0.846rem + 0.13vw, 1rem); //14-16
         cursor: pointer;
         transition: box-shadow 0.3s linear;
-
         &--basket {
             position: relative;
             padding-left: 38px;
@@ -290,7 +289,6 @@
         &.active {
             &::after {
                 transform: rotate(-90deg);
-                transition: transform 0.3s linear;
             }
         }
     }
@@ -312,7 +310,6 @@
 
         &.active {
             transform: translateY(-200%);
-            transition: transform 0.3s linear;
         }
     }
 
