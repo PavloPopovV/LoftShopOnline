@@ -2,6 +2,10 @@ import { renderEmptyBasket } from "../modules/cart.js";
 import { popupTextShow } from "../modules/popup.js";
 import { popupMsg } from "../ui_messages/messages.js";
 
+function generateRandomNumber() {
+  return Math.floor(Math.random() * 10001); // Генеруємо випадкове ціле число від 0 до 10000
+}
+
 function makeTgMessageForm(form) {
   let message = ``;
 
@@ -67,14 +71,25 @@ function makeTgMessageOrder() {
   return message;
 }
 
-function currentPopupMsg(form) {
+function makePopupMsgPayment(form, paymentIDArg) {
+  const amount = document
+    .querySelectorAll(".order-form__amount span")[1]
+    .textContent.trim();
   let msg = {};
+  msg = form.details.checked
+    ? popupMsg.orderPopupText
+    : popupMsg.orderSecondPopupText;
+  msg.text += `<br /> Введіть цей код у коментарях при оплаті: <b>${paymentIDArg}</b>.`;
+  msg.text += '<br /> Сума оплати:' + (form.paymentTypePart.checked ? ' <b>100грн</b>' : ` <b>${amount}грн</b>`)
 
+  return msg;
+}
+
+function currentPopupMsg(form, paymentIDArg) {
+  let msg = {};
   switch (form.getAttribute("name")) {
     case "orderForm":
-      msg = form.details.checked
-        ? popupMsg.orderPopupText
-        : popupMsg.orderSecondPopupText;
+      msg = makePopupMsgPayment(form, paymentIDArg);
       break;
     case "communicationForm":
       msg = popupMsg.contactPopupText;
@@ -83,21 +98,21 @@ function currentPopupMsg(form) {
       msg = popupMsg.promotionPopupText;
       break;
   }
-
   return msg;
 }
 
 export async function formSend(form) {
-  
-  
+
   const URI_API = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
 
+  const paymentID = generateRandomNumber();
   let message =
     form.getAttribute("name") === "orderForm"
       ? makeTgMessageForm(form) + "\n" + makeTgMessageOrder()
       : makeTgMessageForm(form);
+  message += "\n" + `<b>Код оплати замовлення: ${paymentID}</b>`;
 
-  const popupMsg = currentPopupMsg(form);
+  const popupMsgCustom = currentPopupMsg(form, paymentID);
 
   const response = await fetch(URI_API, {
     method: "POST",
@@ -111,15 +126,16 @@ export async function formSend(form) {
   const result = await response.json();
 
   if (result.ok) {
-    showMsg(true, popupMsg);
+    showMsg(true, popupMsgCustom);
   } else {
-    showMsg(false, popupMsg);
+    showMsg(false, popupMsgCustom);
   }
 }
 
-function showMsg(isSuccess, popupMsg) {
+function showMsg(isSuccess, popupMsgCustom) {
+  console.log(popupMsgCustom)
   if (isSuccess) {
-    popupTextShow(popupMsg.titleText, popupMsg.text);
+    popupTextShow(popupMsgCustom.titleText, popupMsgCustom.text);
     document.forms.orderForm && renderEmptyBasket();
   } else {
     alert("Щось пішло не так, спробуйте пізніше!!!");

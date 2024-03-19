@@ -5,7 +5,7 @@ import { popupMsg } from "../ui_messages/messages.js";
 import { checkForm } from "../modules/formValidation.js";
 import { changeSliderPhoto } from "../modules/changeSliderPhoto.js";
 import { popupTextShow } from "../modules/popup.js";
-import { termsTabs } from "../modules/termsTabs.js";
+import { changeSize, termsTabs } from "../modules/tabs.js";
 import { calcFullPrice, orderCountField, sumCardPrice } from "../modules/orderCount.js";
 import { addProductToBasket, deleteOrder, renderEmptyBasketOrMakeOrdersList } from "../modules/cart.js";
 import { basketCount } from "../modules/headerManipulation.js";
@@ -107,5 +107,9 @@ export function clickHandler(e) {
   if(target.classList.contains('order-form__submit')) {
     e.preventDefault();
     checkForm(orderForm);
+  }
+
+  if(target.classList.contains('product__size-btn')) {
+    changeSize(target)
   }
 }

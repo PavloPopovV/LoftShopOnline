@@ -8,7 +8,9 @@ function makeOrderObj() {
     name = document.querySelector(".product__name").textContent.trim(),
     img = document.querySelector(".product__big-img").src,
     art = document.querySelector(".product__art").textContent,
-    price = document.querySelector(".js-price").textContent.trim(),
+    price = document
+      .querySelector(".product__price-item.active .js-price")
+      .textContent.trim(),
     color = document.querySelector(
       ".product__colors-btn.active span"
     ).textContent,
@@ -28,13 +30,20 @@ function makeOrderObj() {
     material,
     count: 1,
   };
+  console.log(productObj);
   return productObj;
 }
 
 export function addProductToBasket() {
   const basket = JSON.parse(localStorage.getItem("basket")) || [];
   const product = makeOrderObj();
-  let originality = basket.some((item) => item.art === product.art);
+  let originality = basket.some((item) => {
+    if (item.art === product.art && item.size === product.size) {
+      return true;
+    }
+  });
+
+  console.log(!originality);
 
   if (!originality || basket.length == 0) {
     basket.push(product);
@@ -45,10 +54,18 @@ export function addProductToBasket() {
 
 export function deleteOrder(target) {
   const order = target.closest(".order");
-  const orderArt = order.querySelector(".order__art span").textContent;
+  const orderArt = order.querySelector(".order__art span").textContent.trim();
+  const orderSize = order.querySelector(".order__text span").textContent.trim();
   const basket = JSON.parse(localStorage.getItem("basket")) || [];
 
-  const filteredBasket = basket.filter((item) => item.art !== orderArt);
+  const filteredBasket = basket.filter((item) => {
+    if (item.art === orderArt && item.size === orderSize) {
+      return false;
+    } else {
+      return true;
+    }
+  });
+  
   if (filteredBasket.length === 0) {
     localStorage.removeItem("basket");
   } else {
@@ -113,17 +130,17 @@ export function renderEmptyBasket() {
   const ordersTitle = document.querySelector(".orders__title");
   const ordersBox = document.querySelector(".orders__container");
   const form = document.querySelector(".order-form");
-  const orderList = document.querySelector('.orders__list')
+  const orderList = document.querySelector(".orders__list");
 
   let text = document.createElement("p");
   text.classList.add("orders__empty");
   ordersTitle.textContent = "Корзина порожня";
   text.innerHTML = `Запрошуємо вас відвідати наш <a href='catalog.html' >каталог</a> товарів =). `;
   ordersBox.appendChild(text);
-  orderList.innerHTML ='';
+  orderList.innerHTML = "";
   form.style.display = "none";
-  localStorage.removeItem('basket')
-  basketCount()
+  localStorage.removeItem("basket");
+  basketCount();
 }
 
 export function renderEmptyBasketOrMakeOrdersList() {
@@ -131,7 +148,7 @@ export function renderEmptyBasketOrMakeOrdersList() {
   if (basket) {
     makeOrdersList();
   } else {
-    renderEmptyBasket()
+    renderEmptyBasket();
   }
 }
 
